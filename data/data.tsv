@@ -1,0 +1,20 @@
+{   
+     "name":"Sample Table",
+     "topology":"table",
+     "schema":[
+            {"name":"records",
+             "type":"records"}],
+    
+     "records":{
+            "schema":[
+                   {"name":"id",
+                    "type":"int",
+                    "default":0,
+                    "primarykey":true},
+                   {"name":"label",
+                    "type":"string",
+                    "default":""}],
+            "data":[{"id":0,"label":"Row 0"},{"id":1,"label":"Row 1"}]
+     }
+ 
+}
