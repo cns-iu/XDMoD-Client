@@ -501,12 +501,28 @@
 		"Date": "2016 Jan",
 		"PublicationJournal": "Movement disorders : official journal of the Movement Disorder Society"
 	}]
-},"grant_total": 701206296.24,
+},"grant_total": 10152462,
+"publication_total":23,
 "resource_users": {
 	"total": 2537,
 	"QUARRY":1,
 	"BIGRED2": 995,
 	"KARST": 1125,
 	"MASON": 416
+},
+"grant_sizes":{
+	"NIHNIGMS":4144891,
+	"NIHNIA":612703, 
+	"NIHNCI":741896,
+	"UNIVOFWASHINGTON":106236,
+	"NCALIFORNIAINSTFORRES":247938,
+	"NIHNIBIB":938476,
+	"NIHNIAAA":835378,
+	"NIHNIAID":1535531,
+	"NIHNIAMS":16218,
+	"DUKEUNIVERSITY":60764,
+	"NIHNIMH":669552,
+	"NIHNICHD":242879
+
 }
 }

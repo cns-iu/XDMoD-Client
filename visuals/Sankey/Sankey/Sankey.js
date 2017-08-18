@@ -128,7 +128,25 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                 .text("Total Users: "+context.filteredData.resource_users.total)
                 .style("text-anchor","mid")
                 .style("font-size",14)
-            }   
+            }
+
+            if(textNode.text()=="Publications"){
+                textNode
+                .append("tspan")
+                .attr("x", function() {
+                    if (i == 0) {
+                        return currNodeData.x
+                    }
+                    if (i == context.config.meta.other.categories.length - 1) {
+                        return currNodeData.x + context.config.meta.nodes.styleEncoding.size.value
+                    }
+                    return currNodeData.x + context.config.meta.nodes.styleEncoding.size.value / 2
+                })
+                .attr("y", 0)
+                .text("Total Publications: "+context.filteredData.publication_total)
+                .style("text-anchor","mid")
+                .style("font-size",14)
+            }    
         })
 
 
@@ -465,14 +483,31 @@ context.SVG.nodes.append("text")
     else return txt+" (#Users: "+stats+")";
 }
 else{
+    var stats1=""
+     switch(d.name)
+        {
+            case "NIH-NIGMS":stats1 = context.filteredData.grant_sizes.NIHNIGMS;break;
+            case "NIH-NIA": stats1 = context.filteredData.grant_sizes.NIHNIA;break;
+            case "NIH-NCI":stats1 = context.filteredData.grant_sizes.NIHNCI;break;
+            case "UNIV OF WASHINGTON":stats1 = context.filteredData.grant_sizes.UNIVOFWASHINGTON;break;
+            case "N CALIFORNIA INST FOR RES":stats1 = context.filteredData.grant_sizes.NCALIFORNIAINSTFORRES;break;
+            case "NIH-NIBIB":stats1 = context.filteredData.grant_sizes.NIHNIBIB;break;
+            case "NIH-NIAAA":stats1 = context.filteredData.grant_sizes.NIHNIAAA;break;
+            case "NIH-NIAID":stats1 = context.filteredData.grant_sizes.NIHNIAID;break;
+            case "NIH-NIAMS":stats1 = context.filteredData.grant_sizes.NIHNIAMS;break;
+            case "DUKE UNIVERSITY":stats1 = context.filteredData.grant_sizes.DUKEUNIVERSITY;break;
+            case "NIH-NIMH":stats1 = context.filteredData.grant_sizes.NIHNIMH;break;
+            case "NIH-NICHD":stats1 = context.filteredData.grant_sizes.NIHNICHD;break;
+
+        }
     var txt = d.name.replaceAll("|", "").replaceAll("dotdot", ".");
     if (context.config.meta.labels.prettyMap[txt.trim()]) {
-        return context.config.meta.labels.prettyMap[txt.trim()];
+        return context.config.meta.labels.prettyMap[txt.trim()]+" ($"+stats1+")";
     }
     if ((txt.length>15) && (d.i==2))
         {return txt.slice(0,15)+"...";
 }
-else return txt;
+else return txt+" ($"+stats1+")";
 }
 
 })
@@ -638,12 +673,17 @@ function formatData() {
                 return a.value - b.value;
         });
 
+      /*  var k = d3.nest()
+        .key(function(d) { return d.PubID; })
+        .entries(context.filteredData.records.data);
+        console.log(JSON.stringify(k));*/
         return graph;
     }
 
     function has(object, key) {
         return object ? hasOwnProperty.call(object, key) : false;
     }
+
 }
 return context;
 }
