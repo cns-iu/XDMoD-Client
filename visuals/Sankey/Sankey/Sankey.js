@@ -1,5 +1,5 @@
 head.js('visuals/Sankey/Sankey/sankey-plugin.js')
-
+var stringSizeLimit  = 25;
 Array.prototype.getUnique = function() {
     var u = {},
     a = [];
@@ -131,14 +131,14 @@ visualizationFunctions.Sankey = function(element, data, opts) {
             }   
         })
 
-         
+
          return d3.selectAll(".columnlabel")
      }
 
 
 
      function applySVGEvents() {
-        
+
         function customEdgeFilter(node, edge){
             switch(node.i){
                 case 0: if(node.name == edge.uid.split("|")[1])
@@ -323,7 +323,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                         if (d8.name.indexOf(uidTokens[3])!=-1)
                             return d8;
                     }).classed("selected",true);
-                    
+
                     d3.select(this).style("stroke", color).classed("selected", true).moveToFront();
                 }) 
             }
@@ -360,9 +360,9 @@ visualizationFunctions.Sankey = function(element, data, opts) {
         context.SVG.background
         .on("dblclick", function() {
             context.SVG.edges.classed("selected", false).classed("deselected", false).style("stroke", defaultEdgeColor);
-            
+
             context.SVG.nodes.selectAll("rect").classed("selected", false).classed("deselected", false)
-            
+
             context.SVG.edges.each(function(d2,i2){
                 d2.click=0;
             })
@@ -454,13 +454,13 @@ context.SVG.nodes.append("text")
             case "KARST":stats = context.filteredData.resource_users.KARST;break;
 
         }
-        
+
         var txt = d.name.replaceAll("|", "").replaceAll("dotdot", ".");
         if (context.config.meta.labels.prettyMap[txt.trim()]) {
             return context.config.meta.labels.prettyMap[txt.trim()]+" (#Users: "+stats+")";
         }
-        if ((txt.length>15) && (d.i==2))
-            {return txt.slice(0,15)+"...";
+        if ((txt.length>stringSizeLimit) && (d.i==2))
+            {return txt.slice(0, stringSizeLimit)+"...";
     }
     else return txt+" (#Users: "+stats+")";
 }
@@ -543,11 +543,11 @@ function formatData() {
     var stepOne = {};
     context.filteredData.records.data.forEach(function(d, i) {
         var str = "|"
-        
+
         context.config.meta.other.categories.forEach(function(d1, i1) {
-            if (d[d1].length <20)
+            if (d[d1].length < stringSizeLimit)
                 str += d[d1]+ "|"
-            else str +=d[d1].slice(0,20)+"|"
+            else str +=d[d1].slice(0,stringSizeLimit)+"|"
         })
         if (has(stepOne, str)) {
             stepOne[str].children.push(d)
