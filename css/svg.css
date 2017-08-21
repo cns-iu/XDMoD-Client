@@ -179,7 +179,7 @@
 .wvf-label-mid:hover {
     cursor: pointer;
     stroke: black;
-    stroke-width: .5px;
+    stroke-width: .1px;
     color: white;
     
 }
