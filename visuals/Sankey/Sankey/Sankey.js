@@ -107,7 +107,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                     return currNodeData.x + context.config.meta.nodes.styleEncoding.size.value / 2
                 })
                 .attr("y", 0)
-                .text("Total Funding: $"+context.filteredData.grant_total)
+                .text("Total Funding: "+Utilities.formatValue["currency"](context.filteredData.grant_total,'$'))
                 .style("text-anchor","mid")
                 .style("font-size",14)
             }
@@ -125,7 +125,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                     return currNodeData.x + context.config.meta.nodes.styleEncoding.size.value / 2
                 })
                 .attr("y", 0)
-                .text("Total Users: "+context.filteredData.resource_users.total)
+                .text("Total Users: "+Utilities.formatValue["number"](context.filteredData.resource_users.total))
                 .style("text-anchor","mid")
                 .style("font-size",14)
             }
@@ -480,7 +480,7 @@ context.SVG.nodes.append("text")
         if ((txt.length>stringSizeLimit) && (d.i==2))
             {return txt.slice(0, stringSizeLimit)+"...";
     }
-    else return txt+" (#Users: "+stats+")";
+    else return txt+" (#Users: "+Utilities.formatValue["number"](stats)+")";
 }
 else{
     var stats1=""
@@ -507,7 +507,7 @@ else{
     if ((txt.length>15) && (d.i==2))
         {return txt.slice(0,15)+"...";
 }
-else return txt+" ($"+stats1+")";
+else return txt+" ("+Utilities.formatValue["currency"](stats1,'$')+")";
 }
 
 })
