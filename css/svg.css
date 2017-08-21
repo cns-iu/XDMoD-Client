@@ -96,11 +96,11 @@
 .sankey01 .wvf-node.selected {
     opacity:1;
     stroke-width: 1;
-     stroke:black;
+    stroke: black;
 }
 
 .sankey01 .wvf-node {
-     opacity: 0.75;
+    opacity: 0.75;
     fill: #ffe8c8;
     stroke:black;
     stroke-width: 0.5px;
@@ -110,6 +110,9 @@
 
 }
 
+.sankey01 text {
+    bottom: 20px;
+}
 
 .sankey01 .wvf-node:onclick{
   
@@ -169,7 +172,7 @@
 .wvf-label-mid {
     font-size: 13px;
     font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
+    font-weight: 600;
     text-transform: capitalize;
 }
 
