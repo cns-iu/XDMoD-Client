@@ -249,7 +249,6 @@ dl, dd, dt{
 
 /*Labels (text)*/
 .l {
-  letter-spacing: 1px !important;
   color: #555;
   cursor: pointer;
   text-shadow: 0 2px 3px rgba(255,255,255,.6);
