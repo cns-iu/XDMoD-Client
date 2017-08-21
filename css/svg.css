@@ -177,10 +177,10 @@
 }
 
 .wvf-label-mid:hover {
-    cursor: pointer;
+/*    cursor: pointer;
     stroke: black;
     stroke-width: .05px;
-    color: white;
+    color: white;*/
     
 }
 
