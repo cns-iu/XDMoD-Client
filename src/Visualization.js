@@ -93,13 +93,13 @@ var Visualization = function(scope) {
                     .attr("class", "zoom-level-text")
                     .text("(" + scope.zoom.scale() + "x)")
                     .attr("x", 80)
-                    .attr("y", 24)
+                    .attr("y", 30)
 
                     btn.append("rect")
                     .attr("x", function(d, i) {
                         return 10 + 35 * i
                     })
-                    .attr("y", 5)
+                    .attr("y", 10)
                     .attr("width", 30)
                     .attr("height", 30)
                     .attr("class", "button")
@@ -125,7 +125,7 @@ var Visualization = function(scope) {
                     .attr("x", function(d, i) {
                         return 20 + 35 * i
                     })
-                    .attr("y", 25)
+                    .attr("y", 30)
                     .text(function(d, i) {
                         return (i == 0) ? "+" : "-"
                     })
