@@ -46,10 +46,9 @@ html,body {
 }
 
 line {
-  fill: none;
   stroke: #666;
   shape-rendering: crispEdges;
-  opacity: 0.3;
+
 }
 
 .brush{
@@ -122,9 +121,9 @@ line {
 
 .axis 
 .minor {
-  stroke: #777;
+/*  stroke: #777;
   stroke-dasharray: 2,2;
-  stroke-width: 0.4px;
+  stroke-width: 0.4px;*/
 }
 
 .notseen {
