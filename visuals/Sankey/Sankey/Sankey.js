@@ -124,7 +124,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                     }
                     return currNodeData.x + context.config.meta.nodes.styleEncoding.size.value / 2
                 })
-                .attr("y", 0)
+                .attr("y", -20)
                 .text("Total Users: "+Utilities.formatValue["number"](context.filteredData.resource_users.total))
                 .style("text-anchor","mid")
                 .style("font-size",14)
