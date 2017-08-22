@@ -78,7 +78,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                 }
                 return currNodeData.x + context.config.meta.nodes.styleEncoding.size.value / 2
             })
-            .attr("y", -20)
+            .attr("y", -30)
             .style("text-anchor", function() {
                 if (i == 0) {
                     return "start";
