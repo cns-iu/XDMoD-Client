@@ -157,7 +157,7 @@ visualizationFunctions.ForceNetwork = function(element, data, opts) {
 
                        barChart01.SVG.selectAll("text").attr("opacity",1);
                        barChart01.SVG.selectAll("text").style("stroke-width","0px");
-                       barChart01.SVG.selectAll("text").style("font-weight","bold");            
+                       barChart01.SVG.selectAll("text").style("font-weight","600");            
                        barChart01.SVG.selectAll("rect").style("fill","lightgrey");
 
 
