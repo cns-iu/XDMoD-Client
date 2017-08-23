@@ -129,13 +129,7 @@ line {
 }
 
 .axis .minor line {
-  stroke: #cfcfcf;
-  stroke-dasharray: 10;
-  opacity: 1;
-}
-
-.tick line {
-  stroke: #cfcfcf;
+  stroke: #a4a4a4 !important;
   stroke-dasharray: 10;
   opacity: 1;
 }
