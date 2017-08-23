@@ -47,7 +47,7 @@ html,body {
 }
 
 line {
-  
+
 /*  stroke: #666;*/
   shape-rendering: crispEdges;
 
@@ -94,7 +94,7 @@ line {
 
 .d3-tip {
   line-height: 1;
-  font-weight: bold;
+  font-weight: 600;
   padding: 12px;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
@@ -126,6 +126,18 @@ line {
 /*  stroke: #777;
   stroke-dasharray: 2,2;
   stroke-width: 0.4px;*/
+}
+
+.axis .minor line {
+  stroke: #cfcfcf;
+  stroke-dasharray: 10;
+  opacity: 1;
+}
+
+.tick line {
+  stroke: #cfcfcf;
+  stroke-dasharray: 10;
+  opacity: 1;
 }
 
 .notseen {
@@ -169,7 +181,7 @@ line {
 
 h1 {
   text-align: center;
-  text-decoration: bolder;
+  text-decoration: 600;
   font-family: open sans !important;
 }
 
@@ -299,7 +311,7 @@ dl, dd, dt{
   background: white;
   font-family: 'Open Sans', sans-serif;
   text-transform: capitalize;
-  font-weight: bold;
+  font-weight: 600;
   margin-right: 15px;
 }
 
