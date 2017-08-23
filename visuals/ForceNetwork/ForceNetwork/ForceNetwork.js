@@ -99,7 +99,7 @@ visualizationFunctions.ForceNetwork = function(element, data, opts) {
                         barChart01.SVG.barGroups.selectAll("text").forEach(function(d6,i6){
                             if (d6[0].innerHTML == d.name.toString().toLowerCase()){
                                 d6[0].setAttribute("opacity",1);
-                                d6[0].style.fontWeight = "600";
+                                d6[0].style.fontWeight = "normal";
                                 d6[0].style.stroke = "black";
                                 d6[0].style.strokeWidth = ".5px";
                                 d6.parentNode.childNodes[0].style.fill = "darkgrey";
