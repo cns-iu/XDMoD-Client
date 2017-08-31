@@ -78,6 +78,7 @@ visualizationFunctions.ForceNetwork = function(element, data, opts) {
 
                 d3.selectAll("text.node").style("display", "block").style("font-size", 
                     function(d) {return  d3.select(this.parentNode.childNodes[0]).attr("r");});
+                
             }
 
             context.SVG.force.restart = function() {

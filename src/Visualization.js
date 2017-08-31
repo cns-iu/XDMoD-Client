@@ -57,6 +57,8 @@ var Visualization = function(scope) {
         out.easySVG = function(selector, args) {
             args = args || { responsive: true };
             scope.SVGBase = d3.select(selector)
+            .on("touchstart", nozoom)
+            .on("touchmove", nozoom)
             .append("svg")
             .classed("canvas " + scope.attrs.ngIdentifier, true)
             .attr("background", "white")
@@ -80,7 +82,9 @@ var Visualization = function(scope) {
                     .scaleExtent(scaleExtent)
                     .on("zoom", zoomed);
 
-
+                    function nozoom() {
+                            d3.event.preventDefault();
+                        }
                     function zoomed() {
                         scope.SVG.attr("transform", "translate(" + scope.zoom.translate() + ")scale(" + scope.zoom.scale() + ")");
                         zoomtext.text("(" + Utilities.round(scope.zoom.scale(), 2) + "x)");
