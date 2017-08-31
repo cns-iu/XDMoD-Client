@@ -25,9 +25,10 @@
 
 
 .legend line   {
-  stroke: #828282;
+  stroke: #a4a4a4;
   stroke-dasharray: 10;
   opacity: 1;
+  stroke: 1;
 /*  stroke-width: 2px;*/
 }
 
@@ -35,7 +36,7 @@
 .axis text {
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
-    
+    font-weight: 600;
 }
 
 
@@ -151,9 +152,8 @@
 /* ---- Labels ----- */
 
 .wvf-label {
-   
     font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: capitalize;
     font-size: 16px;
     z-index: 999999999999999999999999999999999999999999;
@@ -183,6 +183,7 @@
 
 .wvf-label-mid:hover {
     cursor: pointer;
+    font-weight: 600;
 /*    stroke: black;
     stroke-width: .05px;
     color: white;*/

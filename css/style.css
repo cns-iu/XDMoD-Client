@@ -44,15 +44,16 @@ html,body {
   font-size:25px
 }
 
+
 .inline-p {
  display: inline;
 }
 
 line {
-  fill: none;
-  stroke: #666;
+
+/*  stroke: #666;*/
   shape-rendering: crispEdges;
-  opacity: 0.3;
+
 }
 
 .brush{
@@ -96,7 +97,7 @@ line {
 
 .d3-tip {
   line-height: 1;
-  font-weight: bold;
+  font-weight: 600;
   padding: 12px;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
@@ -123,11 +124,13 @@ line {
   left: 0;
 }
 
-.axis 
-.minor {
- /* stroke: #777;
-  stroke-dasharray: 2,2;
-  stroke-width: 0.4px;*/
+
+
+.axis .minor line {
+  stroke: #a4a4a4 !important;
+  stroke-dasharray: 10;
+  opacity: 1;
+
 }
 
 .notseen {
@@ -171,7 +174,7 @@ line {
 
 h1 {
   text-align: center;
-  text-decoration: bolder;
+  text-decoration: 600;
   font-family: open sans !important;
 }
 
@@ -304,7 +307,7 @@ dl, dd, dt{
   background: white;
   font-family: 'Open Sans', sans-serif;
   text-transform: capitalize;
-  font-weight: bold;
+  font-weight: 600;
   margin-right: 15px;
 }
 
@@ -419,7 +422,7 @@ dl, dd, dt{
 .zoom-level-text{
   text-transform: capitalize;
   font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .axis-text{

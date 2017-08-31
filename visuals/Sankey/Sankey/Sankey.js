@@ -125,7 +125,9 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                     return currNodeData.x + context.config.meta.nodes.styleEncoding.size.value / 2
                 })
                 .attr("y", -12)
+
                 .text("Total # Times Used: "+Utilities.formatValue["number"](context.filteredData.resource_users.total))
+
                 .style("text-anchor","mid")
                 .style("font-size",14)
             }
@@ -143,7 +145,9 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                     return currNodeData.x + context.config.meta.nodes.styleEncoding.size.value / 2
                 })
                 .attr("y", -12)
+
                 .text("Total Publications: "+context.filteredData.publication_disciplines.total)
+
                 .style("text-anchor","mid")
                 .style("font-size",14)
             }    

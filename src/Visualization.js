@@ -97,7 +97,7 @@ var Visualization = function(scope) {
                     .attr("class", "zoom-level-text")
                     .text("(" + scope.zoom.scale() + "x)")
                     .attr("x", 80)
-                    .attr("y", 23)
+                    .attr("y", 30)
 
                     btn.append("rect")
                     .attr("x", function(d, i) {
@@ -105,13 +105,13 @@ var Visualization = function(scope) {
                     })
                     .attr("y", 10)
                     .attr("width", 30)
-                    .attr("height", 20)
+                    .attr("height", 30)
                     .attr("class", "button")
                     .attr("id", function(d) {
                         return d
                     })
                     .style("fill", function(d, i) {
-                        return i ? "darkgrey" : "#D8D8D8"
+                        return i ? "#D8D8D8" : "#D8D8D8"
                     })
                     .style("cursor", "pointer")
                     .style("border-radius", ".2em")
@@ -129,7 +129,7 @@ var Visualization = function(scope) {
                     .attr("x", function(d, i) {
                         return 20 + 35 * i
                     })
-                    .attr("y", 25)
+                    .attr("y", 30)
                     .text(function(d, i) {
                         return (i == 0) ? "+" : "-"
                     })
