@@ -446,7 +446,6 @@ dl, dd, dt{
 }
 
 #filterLabel {
-  text-transform: capitalize;
   font-weight: 600;
   font-size: 16px;
 }

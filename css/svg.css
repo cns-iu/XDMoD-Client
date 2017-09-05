@@ -36,7 +36,7 @@
 .axis text {
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 
@@ -177,7 +177,6 @@
 .wvf-label-mid {
     font-size: 13px;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
     text-transform: capitalize;
 }
 
