@@ -280,48 +280,15 @@
 
 .wvf-shape.focused {}
 [class*="NSF"] rect {
-    fill: #b40000 !important;
+    fill: rgb(0,0,255) !important;
 }
 
 [class*="NIH"] rect {
-    fill: #a52115 !important;
+    fill: rgb(255,0,0) !important;
 }
 
-[class*="NSFPub"] rect {
-    fill: #2171b5 !important;
-}
 
-[class*="NSFPub1"] rect {
-    fill: #4292c6 !important;
-}
 
-[class*="NSFPub2"] rect {
-    fill: #6baed6 !important;
-}
-
-[class*="NSFPub3"] rect {
-    fill: #9ecae1 !important;
-}
-
-[class*="NSFPub4"] rect {
-    fill: #c6dbef !important;
-}
-
-[class*="NIHPub"] rect {
-    fill: #238b45 !important;
-}
-
-[class*="CPU"] rect {
-    fill: #add8e6 !important;
-}
-
-[class*="CPU1"] rect {
-    fill: #f16913 !important;
-}
-
-[class*="CPU2"] rect {
-    fill: #4a1486 !important;
-}
 
 [class*="MASON"] rect {
     fill: #2e6a34 !important;
