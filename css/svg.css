@@ -107,7 +107,7 @@
 
 .sankey01 .wvf-node {
     opacity: 0.75;
-    fill: #ffe8c8;
+    /*fill: #ffe8c8;*/
     stroke:black;
     stroke-width: 0.5px;
     cursor: move;
@@ -291,20 +291,20 @@
 
 
 [class*="MASON"] rect {
-    fill: #2e6a34 !important;
+    fill: #4F4F4E !important;
 }
 
 [class*="KARST"] rect {
-    fill: #1a421f !important;
+    fill: #4F4F4E !important;
 }
 
 
 [class*="BIGRED2"] rect {
-    fill: #519f65 !important;
+    fill: #4F4F4E !important;
 }
 
 [class*="QUARRY"] rect {
-    fill: #a6d6ca !important;
+    fill: #4F4F4E !important;
 }
 
 
