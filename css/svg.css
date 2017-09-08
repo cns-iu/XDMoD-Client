@@ -1,4 +1,4 @@
-.type-1 {
+ .type-1 {
     stroke: darkred !important;
 }
 .type-2 {
@@ -207,13 +207,8 @@
 
 
 .forceNetwork01 .wvf-edge{
-    stroke: rgb(67,70,72) !important;
-  
-    
+    stroke: rgb(67,70,72) !important;   
 }
-
-
-
 
 .sankey01 .wvf-edge {
     opacity: .5;
@@ -284,10 +279,8 @@
 }
 
 [class*="NIH"] rect {
-    fill: rgb(255,0,0) !important;
+ fill: rgb(255,0,0) !important;
 }
-
-
 
 
 [class*="MASON"] rect {
