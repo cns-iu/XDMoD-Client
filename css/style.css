@@ -289,9 +289,8 @@ dl, dd, dt{
    top: 0px;
   height: 260px;
   border-style: solid;
-  border-color: black; 
+  border: .5px solid #afafaf;
   border-width: 0.5px;
-  box-shadow: 10px 10px 5px #888888;
   background:white;
 }
 
