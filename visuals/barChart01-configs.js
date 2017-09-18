@@ -64,5 +64,5 @@ events.barChart01 = function(ntwrk) {
 
 
 dataprep.barChart01 = function(ntwrk) {
-  
+  ntwrk.click=0;
 }

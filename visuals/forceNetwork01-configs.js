@@ -169,6 +169,7 @@ events.forceNetwork01 = function(ntwrk){
     }
 };
 dataprep.forceNetwork01 = function(ntwrk) {
+    ntwrk.click=0;
     ntwrk.filteredData.nodes.data.map(function(d, i) {
         d.id = i;
         return d;

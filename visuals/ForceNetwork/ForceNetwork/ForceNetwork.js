@@ -93,7 +93,95 @@ visualizationFunctions.ForceNetwork = function(element, data, opts) {
                     .on("dragstart", function() {
                         d3.event.sourceEvent.stopPropagation();
                     })
-                    ). on('mouseover', function(d,i){
+                    )
+                    .on('click',function(d,i){
+                         if (!forceNetwork01.click) 
+                        {
+                            forceNetwork01.click = 1;
+                            barChart01.click=1;
+                            forceNetwork01.SVG.selectAll("text").attr("display","none");
+                            d3.select(this).selectAll("text").attr("display","inline");
+                            barChart01.SVG.selectAll("text").attr("opacity",.25);
+                            barChart01.SVG.barGroups.selectAll("text").forEach(function(d6,i6){
+                                if (d6[0].innerHTML == d.name.toString().toLowerCase()){
+                                    d6[0].setAttribute("opacity",1);
+                                    d6[0].style.fontWeight = "bold";
+                                    d6[0].style.stroke = "black";
+                                    d6[0].style.strokeWidth = ".5px";
+                                    d6.parentNode.childNodes[0].style.fill = "darkgrey";
+                                }
+
+
+                            })
+                            context.SVG.nodeG.selectAll("circle")
+                            .attr("opacity", .25)
+                            context.SVG.edges
+                            .attr("opacity", .25)
+                            var matchingEdges = context.SVG.edges.filter(function(d1, i1) {
+                                return d1.source.id == d.id || d1.target.id == d.id;
+                            })
+
+                            matchingEdges.attr("opacity", 1);
+                            matchingEdges.data().forEach(function(d1, i1) {
+                                context.SVG.nodeG.filter(function(d2, i2) {
+
+                                    if(d2.id == d1.source.id || d2.id == d1.target.id) {
+                                        barChart01.SVG.barGroups.selectAll("text").forEach(function(d6,i6){
+                                            if (d6[0].innerHTML == d2.name.toString().toLowerCase()) 
+                                            {
+                                                d6[0].setAttribute("opacity",1);
+                                                d6.parentNode.childNodes[0].style.fill = "darkgrey";
+                                            }
+                                        })
+                                        return d2.id;    
+                                    }
+                                }).selectAll("circle").attr("opacity", 1)
+                            });
+
+                            matchingEdges.data().forEach(function(d4,i4){
+                                context.SVG.nodeG.filter(function(d2,i2){
+                                    if((d4.target.id == d.id) && (d2.id == d4.source.id)) return d2.id;
+                                    else if((d4.source.id == d.id) && (d2.id == d4.target.id)) return d2.id;
+
+                                }).selectAll("text").attr("display","inline");
+                            })
+
+
+                        }
+
+                        else{
+                            forceNetwork01.click=0;
+                            barChart01.click=0;
+                            context.SVG.nodeG.selectAll("text").attr("display", function(d, i) {
+                                if (d[configs.forceNetwork01.nodes.styleEncoding.size.attr] >= parseInt($("#range")["0"].value)) {
+
+                                    return "inline";
+
+                                } else {
+
+                                    return "none";
+                                }
+
+                            });
+
+                            barChart01.SVG.selectAll("text").attr("opacity",1);
+                            barChart01.SVG.selectAll("text").style("stroke-width","0px");
+                            barChart01.SVG.selectAll("text").style("font-weight","bold");            
+                            barChart01.SVG.selectAll("rect").style("fill","lightgrey");
+
+
+                            context.SVG.nodeG.selectAll("circle")
+                            .attr("opacity", 1);
+                            context.SVG.edges
+                            .attr("opacity", 1);
+
+                        }
+
+                    })
+
+                .on('mouseover', function(d,i){
+
+                    if(!forceNetwork01.click){
                         forceNetwork01.SVG.selectAll("text").attr("display","none");
                         d3.select(this).selectAll("text").attr("display","inline");
                         barChart01.SVG.selectAll("text").attr("opacity",.25);
@@ -141,9 +229,10 @@ visualizationFunctions.ForceNetwork = function(element, data, opts) {
                             }).selectAll("text").attr("display","inline");
                         })
 
-
+                    }
 
                     }).on('mouseout', function(d,i){
+                    if(!forceNetwork01.click){
                        context.SVG.nodeG.selectAll("text").attr("display", function(d, i) {
                         if (d[configs.forceNetwork01.nodes.styleEncoding.size.attr] >= parseInt($("#range")["0"].value)) {
 
@@ -167,7 +256,7 @@ visualizationFunctions.ForceNetwork = function(element, data, opts) {
                        context.SVG.edges
                        .attr("opacity", 1);
 
-
+                   }
 
                    }); 
 
@@ -221,28 +310,32 @@ visualizationFunctions.ForceNetwork = function(element, data, opts) {
                 }
 
 
-                context.SVG.nodeG.on("mouseover.labels", function(d, i) {
-                    d3.select(this).selectAll("text").attr("display", "inline");
-                })
-                context.SVG.nodeG.on("mouseout.labels", function(d, i) {
-                    d3.select(this).selectAll("text").attr("display", "none");
-                })
-                context.SVG.nodeG.on("mouseup.pinNodes", function(d, i) {
-                    if (d3.event.shiftKey) {
-                        d.fixed = true;
-                    } else {
-                        d.fixed = false;
-                    }
-                })
-                context.SVG.nodeG.on("click.showEdges", function(d, i) {
+               context.SVG.background
+                .on('click',function(d,i){
+                    forceNetwork01.click=0;
+                    barChart01.click=0;
+                    context.SVG.nodeG.selectAll("text").attr("display", function(d, i) {
+                        if (d[configs.forceNetwork01.nodes.styleEncoding.size.attr] >= parseInt($("#range")["0"].value)) {
+
+                            return "inline";
+
+                        } else {
+
+                            return "none";
+                        }
+
+                    });
+
+                    barChart01.SVG.selectAll("text").attr("opacity",1);
+                    barChart01.SVG.selectAll("text").style("stroke-width","0px");
+                    barChart01.SVG.selectAll("text").style("font-weight","bold");            
+                    barChart01.SVG.selectAll("rect").style("fill","lightgrey");
+
+
+                    context.SVG.nodeG.selectAll("circle")
+                    .attr("opacity", 1);
                     context.SVG.edges
-                    .classed("selected", false)
-                    .classed("deselected", true)
-
-
-                    context.SVG.edges.filter(function(d1, i1) {
-                        return d.id == d1.source.id || d.id == d1.target.id
-                    }).classed("selected", true).classed("deselected", false)
+                    .attr("opacity", 1);
                 })
 
 
