@@ -485,7 +485,7 @@ context.SVG.nodes.append("text")
         if ((txt.length>stringSizeLimit) && (d.i==2))
             {return txt.slice(0, stringSizeLimit)+"...";
     }
-    else return txt+" (#"+Utilities.formatValue["number"](stats)+")";
+    else return txt+" ("+Utilities.formatValue["number"](stats)+")";
 }
 if(d.i == 1){
     var stats1=""
@@ -576,7 +576,7 @@ function createToolTips() {
             target = target
         }
         var val = source + " to " +
-        target + "\n" + "#"+ Utilities.formatValue["number"](d.value);
+        target + "\n" + ""+ Utilities.formatValue["number"](d.value);
         return val.replaceAll("|", "").replaceAll("dotdot", ".").trim();
     });
     context.SVG.nodes.append("title")
@@ -589,7 +589,7 @@ function createToolTips() {
             name = name
         }
 
-        var val1 = name + "\n" + "#" + Utilities.formatValue[""](d.value);
+        var val1 = name + "\n" + "" + Utilities.formatValue[""](d.value);
         var val2 = val1.replaceAll("|", "").replaceAll("dotdot", ".").trim();
         return val2;
     });
