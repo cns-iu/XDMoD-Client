@@ -25,7 +25,7 @@
         url: 'data/copiDataAsRecords.json'
     },
     sankeyData: {
-        url: 'data/sankey-NIH-Discipline.json'
+        url: 'data/sankey.json'
     }
 
 }

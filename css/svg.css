@@ -274,31 +274,6 @@
 .wvf-shape.deselected {}
 
 .wvf-shape.focused {}
-[class*="NSF"] rect {
-    fill: rgb(107, 174, 214) !important;
-}
-
-[class*="NIH"] rect {
- fill: rgb(153,0,13) !important;
-}
-
-
-[class*="MASON"] rect {
-    fill: #4F4F4E !important;
-}
-
-[class*="KARST"] rect {
-    fill: #4F4F4E !important;
-}
-
-
-[class*="BIGRED2"] rect {
-    fill: #4F4F4E !important;
-}
-
-[class*="QUARRY"] rect {
-    fill: #4F4F4E !important;
-}
 
 
 
@@ -333,5 +308,14 @@
     fill: rgb(184,21,11) !important;
 }
 [class*="Other"] rect {
-    fill: #a6d6ca !important;
+    fill: #8E8E8E !important;
+}
+[class*="Math & Physics"] rect {
+    fill: #8E1BCE!important;
+}
+[class*="Multidisciplinary"] rect {
+    fill: #000000 !important;
+}
+[class*="Unclassified"] rect {
+    fill: #8E8E8E !important;
 }
