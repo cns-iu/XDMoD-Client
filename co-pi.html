@@ -2,8 +2,7 @@
 
 <head>
     <meta charset=UTF-8 />
-    <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
-    <title>CNS Visualization</title>
+    <title>Co-PI Collaboration Network</title>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/head.js"></script>
     <script src="src/Init.js"></script>
@@ -22,7 +21,7 @@
         <div flex>
             <div ng-controller="ngCnsVisual" ng-data-attr="ng-cns-visual" ng-reset-on-resize ng-config="visuals/forceNetwork01-configs.js" ng-vis-type="ForceNetwork" id="forceNetwork01" ng-data-field="copiData" ng-identifier="forceNetwork01" ngstyle="top: 60px;">
             </div>
-            
+
             <div class="legend-space">
                 <div class="legend-container legend">
                     <button >
@@ -41,7 +40,7 @@
                                         <div layout="column" layout-fill class="wrapper" ng-controller="ngCnsVisual" ng-data-attr="ng-cns-visual" ng-vis-type="LegendNodeColor" id="nodeColor" ng-identifier="nodeColor">
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                             <div flex layout="column">
@@ -60,9 +59,9 @@
         </div>
     </div>
     <div flex >
-        
+
         <div style="overflow-y: scroll; height:1300px;" ng-controller="ngCnsVisual" ng-data-attr="ng-cns-visual" ng-reset-on-resize ng-config="visuals/barChart01-configs.js" ng-vis-type="HVBarChart" id="barChart01" ng-data-field="copiData" ng-identifier="barChart01" >
-          
+
         </div>
     </div>
 </div>
@@ -73,7 +72,7 @@
     /* window resize event listener function */
     function onWindowResize()
     {
-     window.location.reload(); 
+     window.location.reload();
  }
  var legendToggleOff = true;
  setTimeout(function() {
