@@ -170,12 +170,16 @@ events.forceNetwork01 = function(ntwrk){
 };
 dataprep.forceNetwork01 = function(ntwrk) {
     ntwrk.click=0;
+    nodeIdMap={};
     ntwrk.filteredData.nodes.data.map(function(d, i) {
-        d.id = i;
+        d.index = i;
+        nodeIdMap[d.id] = d.index;
         return d;
     })
     ntwrk.filteredData.edges.data.map(function(d, i) {
         d.id = i;
+        d.source = nodeIdMap[d.source];
+        d.target = nodeIdMap[d.target];
         return d;
     })
 };

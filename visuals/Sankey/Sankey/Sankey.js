@@ -94,7 +94,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                 }
                 return d;
             })
-            if(textNode.text()=="Funding"){
+            if(textNode.text()=="Funding Type"){
                 textNode
                 .append("tspan")
                 .attr("x", function() {
@@ -107,7 +107,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                     return currNodeData.x + context.config.meta.nodes.styleEncoding.size.value / 2
                 })
                 .attr("y", -12)
-                .text("Total Funding: "+Utilities.formatValue["currency"](context.filteredData.grant_sizes.total,'$'))
+                .text(context.totalGrants+" grants | Total: "+Utilities.formatValue["currency"](context.filteredData.grant_sizes.total,'$'))
                 .style("text-anchor","mid")
                 .style("font-size",14)
             }
@@ -126,7 +126,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                 })
                 .attr("y", -12)
 
-                .text("Total: "+Utilities.formatValue["number"](context.filteredData.resource_users.total))
+                .text("Total Users: "+Utilities.formatValue["number"](context.filteredData.resource_users.total))
 
                 .style("text-anchor","mid")
                 .style("font-size",14)
@@ -481,8 +481,8 @@ context.SVG.nodes.append("text")
 .text(function(d) {
     var stats=""
     if(d.i == 0){
-        name = d.name.replace(/\s/g, '').toUpperCase()
-       stats = context.filteredData.resource_users[name];
+        /*name = d.name.replace(/\s/g, '').toUpperCase()*/
+       stats = context.filteredData.resource_users[d.name];
         var txt = d.name.replaceAll("|", "").replaceAll("dotdot", ".");
         if (context.config.meta.labels.prettyMap[txt.trim()]) {
             return context.config.meta.labels.prettyMap[txt.trim()]+" (Users: "+Utilities.formatValue["number"](stats)+")";
@@ -490,8 +490,7 @@ context.SVG.nodes.append("text")
         if ((txt.length>stringSizeLimit) && (d.i==2))
             {return txt.slice(0, stringSizeLimit)+"...";
     }
-    else return txt;
-        // +" ("+Utilities.formatValue["number"](stats)+")";
+    else return txt+" ("+Utilities.formatValue["number"](stats)+")";
 }
 if(d.i == 1){
     var stats1=""
@@ -549,7 +548,22 @@ function createToolTips() {
     context.SVG.nodes.append("title")
     .attr("class", "tooltip")
     .text(function(d) {
-        var name = d.name.replaceAll("|", "").replaceAll("dotdot", ".").trim();
+        if(d.i==0)
+        {
+            if(sankey01.resource_map[d.name] == "COMPUTE")
+                return Utilities.formatValue["number"](context.filteredData.resource_unit_totals[d.name])+" CPU Hours";
+            if(sankey01.resource_map[d.name] == "STORAGE")
+                return Utilities.formatValue["number"](context.filteredData.resource_unit_totals[d.name])+" GB";
+        }
+        if(d.i==1)
+        {
+            return "#Grants: "+context.uniqueGrants[d.name];   
+        }
+        if(d.i==2)
+        {
+            return "#Publications: "+Utilities.formatValue["number"](context.filteredData.publication_numbers_discipline[d.name]);
+        }
+      /*  var name = d.name.replaceAll("|", "").replaceAll("dotdot", ".").trim();
         if (context.config.meta.labels.prettyMap[name]) {
             name = context.config.meta.labels.prettyMap[name]
         } else {
@@ -558,7 +572,7 @@ function createToolTips() {
 
         var val1 = name + "\n" + "" + Utilities.formatValue[""](d.value);
         var val2 = val1.replaceAll("|", "").replaceAll("dotdot", ".").trim();
-        return val2;
+        return val2;*/
     });
     return context.SVG.selectAll(".tooltip")
 }

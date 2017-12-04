@@ -280,7 +280,7 @@
 [class*="Chemical"] rect {
     fill: rgb(97,255,255) !important;
 }
-[class*="Electrical"] rect {
+[class*="EE & Computer Science"] rect {
     fill: rgb(255,133,255) !important;
 }
 [class*="Health"] rect {
@@ -318,4 +318,7 @@
 }
 [class*="Unclassified"] rect {
     fill: #8E8E8E !important;
+}
+[class*="Earth Sciences"] rect {
+    fill: #9B180F !important;
 }

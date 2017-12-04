@@ -19,13 +19,13 @@
         }
     },
     copiData: {
-        url: 'data/copiData.json'
+        url: 'data/copi2.json'
     },
     copiForBG: {
         url: 'data/copiDataAsRecords.json'
     },
     sankeyData: {
-        url: 'data/sankey.json'
+        url: 'data/sankey9.json'
     }
 
 }
