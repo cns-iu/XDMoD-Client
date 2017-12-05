@@ -524,7 +524,7 @@ dl, dd, dt{
 
 #impactUsageButton{
   position: absolute;
-  top: 20px;
+  top: 15px;
   left:0px;
   z-index: 10;
 }
@@ -532,8 +532,8 @@ dl, dd, dt{
 
 #impactAboutButton{
   position: absolute;
-  top: 20px;
-  left:80px;
+  top: 15px;
+  left:120px;
   z-index: 10;
 }
 
