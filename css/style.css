@@ -524,7 +524,7 @@ dl, dd, dt{
 
 #usageButton{
     position: absolute;
-	top: 80px;
+	top: 40px;
     left:0px;
     z-index: 10;
 }

@@ -121,7 +121,7 @@
 }
 
 .sankey01 .wvf-node:onclick{
-  
+
 }
 
 .sankey01 .wvf-node.deselected {
@@ -156,20 +156,20 @@
     font-weight: 400;
     text-transform: capitalize;
     font-size: 16px;
-    z-index: 999999999999999999999999999999999999999999;
+    z-index: 9;
 
-    
+
 }
 
 .wvf-label:hover {
     cursor: pointer;
-    
+
 }
 
 .wvf-label.selected {}
 
 .wvf-label.deselected {
-  
+
 }
 
 .wvf-label.focused {}
@@ -186,13 +186,13 @@
 /*    stroke: black;
     stroke-width: .05px;
     color: white;*/
-    
+
 }
 
 .wvf-label-mid.selected {}
 
 .wvf-label-mid.deselected {
- 
+
 }
 
 .wvf-label-mid.focused {}
@@ -207,7 +207,7 @@
 
 
 .forceNetwork01 .wvf-edge{
-    stroke: rgb(67,70,72) !important;   
+    stroke: rgb(67,70,72) !important;
 }
 
 .sankey01 .wvf-edge {
@@ -227,12 +227,12 @@
 .sankey01 .wvf-edge.selected {
 
     opacity: 0.7;
-  
+
 
     }
 
 .sankey01 .wvf-edge.deselected {
-    opacity: 0;    
+    opacity: 0;
 }
 
 
