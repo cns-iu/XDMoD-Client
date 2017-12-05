@@ -6,7 +6,11 @@ var scripts = [{
         "roboto": "css/fonts/roboto.css"
     }, {
         "opensans": "css/fonts/opensans.css"
-    }, {
+    },
+    {
+        "bootstrap": "css/bootstrap.min.css"
+    },
+    {
         "jQuery": "lib/jquery-1.11.2.min.js"
     }, {
         "bootstrap.min.js": "lib/bootstrap.min.js"
