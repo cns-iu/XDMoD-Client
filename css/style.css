@@ -4,10 +4,10 @@ html,body {
   width: 100%;
   height: 100%;
   font-family: 'Open Sans', sans-serif;
-  
+
   overflow-x:hidden;
   background: #FFF;
-  
+
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -20,7 +20,7 @@ html,body {
   height: 100%;
   width: 100%;
   /*overflow-y:auto;*/
-  float: left;     
+  float: left;
 }
 
 .readmaptxt, .footinicatorss{
@@ -241,8 +241,8 @@ dl, dd, dt{
   width:80%;
   overflow:hidden;
 }
-.table_specification dl{    
-  display:table-row;  
+.table_specification dl{
+  display:table-row;
 }
 .table_specification dt, .table_specification dd{
   display: table-cell;
@@ -272,7 +272,7 @@ dl, dd, dt{
   font-size: 18px;
   background-color: #fff;
   color: #222 !important;
-  
+
   margin: 0px;
 }
 
@@ -281,7 +281,7 @@ dl, dd, dt{
   background: #fff;
 /*  border: 1px solid #222;*/
   border: .5px solid #afafaf;
-  
+
   padding: 5px 0px 10px 2px;
 }
 
@@ -348,7 +348,7 @@ dl, dd, dt{
  /* align horizontal */
  border-top-left-radius: 25px;
  border-top-right-radius: 25px;
- 
+
  margin-right: auto;
  margin-left: auto;
  bottom: -280px;
@@ -428,7 +428,7 @@ dl, dd, dt{
   text-transform: capitalize;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  
+
 }
 
 /* Filter Labels by #Grants */
@@ -520,6 +520,13 @@ dl, dd, dt{
 
 .icon {
   right: 0px;
+}
+
+#usageButton{
+    position: absolute;
+	top: 80px;
+    left:0px;
+    z-index: 10;
 }
 
 /*#nodeSize{
