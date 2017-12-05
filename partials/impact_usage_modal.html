@@ -22,7 +22,7 @@
               <td>
                 <img src="images/rectangle.png" alt="Node" height="50" width="50" id="rectangle">
                 <img src="images/leftClick.png" alt="Double Click" height="42" width="42" id="doubleClick"><br>
-                <b>Double Click on a Node</b>
+                <b>Left Click on a Node</b>
               </td>
               <td>
                 Selects the node and highlights its edges and connecting nodes.
@@ -54,35 +54,45 @@
                       <li>
                         Node Type - Publications, shows number of publications under that Discipline.
                       </li>
-                      <ul>
+                    </ul>
+                  </li>
+                  <ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="images/edge.png" alt="barGraph" height="50" width="50" id="circle">
+                    <img src="images/mouseover.png" alt="Mouseover" height="42" width="42" id="mouseover"><br>
+                    <b>Mouseover on an Edge</b>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>Highlights the edge and connected nodes, and corresponding edges from connected nodes.
+                        The color of the edges is the same as the color of the nodes they start from and shows how data
+                        flows across different nodes. The selection is cleared on mouseout.
                       </li>
-                      <ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="images/edge.png" alt="barGraph" height="50" width="50" id="circle">
-                        <img src="images/mouseover.png" alt="Mouseover" height="42" width="42" id="mouseover"><br>
-                        <b>Mouseover on an Edge</b>
-                      </td>
-                      <td>
-                        <ul>
-                          <li>Highlights the edge and connected nodes, and corresponding edges from connected nodes.
-                            The color of the edges is the same as the color of the nodes they start from and shows how data
-                            flows across different nodes. The selection is cleared on mouseout.
-                          </li>
-                          <li>Enables a tooltip which shows how many records are in the data file
-                            corresponding to the selected edge.</li>
-                          </td>
-                        </tr>
-
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-
-              </div>
+                      <li>Enables a tooltip which shows how many records are in the data file
+                        corresponding to the selected edge.</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="images/drag.png" alt="barGraph" height="50" width="50" id="circle">
+                      <img src="images/leftClick.png" alt="Left Click and Drag" height="42" width="42" id="leftClick"><br>
+                      <b>Left Click and Drag on a node</b>
+                    </td>
+                    <td>
+                      Allows for re-positioning of nodes.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
