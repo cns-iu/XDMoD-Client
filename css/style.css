@@ -556,9 +556,7 @@ dl, dd, dt{
   border-top-right-radius: 5px;
 }
 
-#impactUsageModal{
-  width:800px;
-}
+
 #impactUsageButton{
   position: absolute;
   top: 10px;
