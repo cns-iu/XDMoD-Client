@@ -8,36 +8,40 @@
   <script src="src/Init.js"></script>
   <!-- <link rel="stylesheet" href="css/bootstrap.min.css">
   <script src="lib/jquery.min.js"></script>
-<script src="lib/bootstrap.min.js"></script> -->
+  <script src="lib/bootstrap.min.js"></script> -->
 </head>
 
 <body>
   <div ng-include="'partials/impact_usage_modal.html'"></div>
- <button type="button" class="btn btn-info btn-s" data-toggle="modal"
- data-target="#impactUsageModal" id="usageButton">
-   <span class="glyphicon glyphicon-info-sign"></span> Usage </button>
+  <button type="button" class="btn btn-info btn-s" data-toggle="modal"
+  data-target="#impactUsageModal" id="impactUsageButton">
+  <span class="glyphicon glyphicon-info-sign"></span> Usage </button>
 
-  <div class="sankey" >
-    <!-- <style="overflow-y: scroll; height:1000px;"> -->
-    <div class="sankeyContainer" id="container">
-      <div ng-controller="ngCnsVisual"
-      ng-vis-type="Sankey"
-      id="sankey01"
-      ng-data-field="sankeyData"
-      ng-identifier="sankey01"
-      ng-config="visuals/sankey01-configs.js">
-    </div>
-    <div class="legend-container legend">
-      <button >
-        <span>Legend</span>
-      </button>
-      <div class="legend-row">
-        <img src="./images/legend.svg" alt="Discipline Legend">
+  <div ng-include="'partials/impact_about_modal.html'"></div>
+  <button type="button" class="btn btn-primary btn-s" data-toggle="modal" data-target="#impactAboutModal" id="impactAboutButton">
+    <span class="glyphicon glyphicon-question-sign"></span> About</button>
 
+    <div class="sankey" >
+      <!-- <style="overflow-y: scroll; height:1000px;"> -->
+      <div class="sankeyContainer" id="container">
+        <div ng-controller="ngCnsVisual"
+        ng-vis-type="Sankey"
+        id="sankey01"
+        ng-data-field="sankeyData"
+        ng-identifier="sankey01"
+        ng-config="visuals/sankey01-configs.js">
+      </div>
+      <div class="legend-container legend">
+        <button >
+          <span>Legend</span>
+        </button>
+        <div class="legend-row">
+          <img src="./images/legend.svg" alt="Discipline Legend">
+
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 </body>
 <script>
