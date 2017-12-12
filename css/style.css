@@ -52,7 +52,7 @@ html,body {
 line {
 
   /*  stroke: #666;*/
-  shape-rendering: crispEdges;
+  /*shape-rendering: crispEdges;*/
 
 }
 
