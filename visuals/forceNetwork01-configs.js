@@ -193,10 +193,10 @@ dataprep.forceNetwork01 = function(ntwrk) {
         d.id = i;
         d.source = nodeIdMap[d.source];
         d.target = nodeIdMap[d.target];
-        if (d.weight>ntwrk.maxEdgeWeight){
+        if (d.number_of_grants>ntwrk.maxEdgeWeight){
             ntwrk.maxEdgeWeight = d.number_of_grants
         }
-        if(d.weight<ntwrk.minEdgeWeight){
+        if(d.number_of_grants<ntwrk.minEdgeWeight){
             ntwrk.minEdgeWeight = d.number_of_grants;
 
         }
