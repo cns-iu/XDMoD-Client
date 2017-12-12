@@ -187,17 +187,17 @@ dataprep.forceNetwork01 = function(ntwrk) {
 
         return d;
     })
-    ntwrk.maxEdgeWeight = 0;
+    ntwrk.maxEdgeWeight = 1;
     ntwrk.minEdgeWeight = 1;
     ntwrk.filteredData.edges.data.map(function(d, i) {
         d.id = i;
         d.source = nodeIdMap[d.source];
         d.target = nodeIdMap[d.target];
         if (d.weight>ntwrk.maxEdgeWeight){
-            ntwrk.maxEdgeWeight = d.weight;
+            ntwrk.maxEdgeWeight = d.number_of_grants
         }
         if(d.weight<ntwrk.minEdgeWeight){
-            ntwrk.minEdgeWeight = d.weight;
+            ntwrk.minEdgeWeight = d.number_of_grants;
 
         }
         return d;
