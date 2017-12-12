@@ -5,15 +5,15 @@
     <g transform="translate(20,0)">
         <g id="maxEdge">
             <text transform="matrix(1 0 0 1 90 60)" text-anchor="start" font-size="13">3</text>
-             <line x1="0" y1="54" x2="80" y2="54" stroke="#9b9b9b" opacity= "0.6875"/>
+             <line x1="0" y1="54" x2="80" y2="54" stroke="#434648" opacity= "0.6875"/>
         </g>
         <g id="midEdge">
             <text transform="matrix(1 0 0 1 90 106)" text-anchor="start" font-size="13">2</text>
-            <line x1="0" y1="103" x2="80" y2="103"  stroke="#9b9b9b" opacity= "0.6875"/>
+            <line x1="0" y1="103" x2="80" y2="103"  stroke="#434648" opacity= "0.6875"/>
         </g>
         <g id="minEdge">
             <text transform="matrix(1 0 0 1 90 156)" text-anchor="start" font-size="13">1</text>
-            <line x1="0" y1="153" x2="80" y2="153"  stroke="#9b9b9b" opacity= "0.6875"/>
+            <line x1="0" y1="153" x2="80" y2="153"  stroke="#434648" opacity= "0.6875"/>
         </g>
     </g>
     <text id="note" transform="matrix(1 0 0 1 20 193)" fill="#444445" font-style="italic" font-size="12"></text>

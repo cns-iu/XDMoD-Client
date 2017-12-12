@@ -25,7 +25,10 @@
 
 
 .legend line   {
-
+  /*stroke: #a4a4a4;
+  stroke-dasharray: 10;
+  opacity: 1;
+  stroke: 1;*/
 /*  stroke-width: 2px;*/
 }
 
