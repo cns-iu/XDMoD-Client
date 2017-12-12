@@ -3,7 +3,7 @@ configs.forceNetwork01 = {
         "styleEncoding": {
             "size": {
                 "attr": "number_of_grants",
-                "range": [5,11,17],
+                "range": [5,17],
                 "scale": "linear"
             },
             "color": {
