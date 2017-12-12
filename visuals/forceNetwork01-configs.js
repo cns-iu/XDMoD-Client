@@ -142,10 +142,8 @@ events.forceNetwork01 = function(ntwrk){
 
         edgeSize.setTitle("#Co-authored Grants")
         edgeSize.setNote("Based on zoom level (" + Utilities.round(ntwrk.zoom.scale(), 1) + "x)")
-        edgeSize.updateEdgeSize(configs.forceNetwork01.edges.styleEncoding.strokeWidth.range);
-        edgeSize.updateTextFromFunc(function(d) {
-            return ntwrk.Scales.edgeSizeScale.invert(d / 2) / ntwrk.zoom.scale();
-        });
+        edgeSize.updateEdgeSize(configs.forceNetwork01.edges.styleEncoding.strokeWidth.range,ntwrk.zoom.scale());
+        edgeSize.updateTextFromFunc();
 
         nodeColor.setTitle("Total Amount in $")
         nodeColor.updateStopColors(configs.forceNetwork01.nodes.styleEncoding.color.range)
@@ -158,9 +156,10 @@ events.forceNetwork01 = function(ntwrk){
                 // });
                 nodeSize.updateNodeSize(configs.forceNetwork01.nodes.styleEncoding.size.range, ntwrk.zoom.scale(), "network");
                 nodeSize.updateTextFromFunc("network");
-                edgeSize.updateTextFromFunc(function(d) {
-                    return ntwrk.Scales.edgeSizeScale.invert(d / 2) / ntwrk.zoom.scale();
-                });
+                // edgeSize.updateTextFromFunc(function(d) {
+                //     return ntwrk.Scales.edgeSizeScale.invert(d / 2) / ntwrk.zoom.scale();
+                // });
+                edgeSize.updateEdgeSize(configs.forceNetwork01.edges.styleEncoding.strokeWidth.range, ntwrk.zoom.scale());
                 nodeSize.setNote("Based on zoom level (" + Utilities.round(ntwrk.zoom.scale(), 1) + "x)")
                 edgeSize.setNote("Based on zoom level (" + Utilities.round(ntwrk.zoom.scale(), 1) + "x)")
             }, 10);
