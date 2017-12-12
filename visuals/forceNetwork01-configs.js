@@ -187,10 +187,19 @@ dataprep.forceNetwork01 = function(ntwrk) {
 
         return d;
     })
+    ntwrk.maxEdgeWeight = 0;
+    ntwrk.minEdgeWeight = 1;
     ntwrk.filteredData.edges.data.map(function(d, i) {
         d.id = i;
         d.source = nodeIdMap[d.source];
         d.target = nodeIdMap[d.target];
+        if (d.weight>ntwrk.maxEdgeWeight){
+            ntwrk.maxEdgeWeight = d.weight;
+        }
+        if(d.weight<ntwrk.minEdgeWeight){
+            ntwrk.minEdgeWeight = d.weight;
+
+        }
         return d;
     })
 
