@@ -100,16 +100,16 @@ events.forceNetwork01 = function(ntwrk){
     function configureDOMElements() {
 
         $('.drawer').drawer();
-        
+
         var orderedSizeCoding = [];
-        
+
         ntwrk.filteredData.nodes.data.forEach(function(d, i) {
             orderedSizeCoding.push(d[configs.forceNetwork01.nodes.styleEncoding.size.attr]);
         })
         orderedSizeCoding.sort(function(a, b) {
             return Number(a) - Number(b);
         });
-        
+
 
         var $range = $("#range");
         $range.ionRangeSlider({
@@ -120,26 +120,25 @@ events.forceNetwork01 = function(ntwrk){
             step: 1,
             grid: false,
             onChange: function(newVal) {
-                
+
                 updateLabelVisibility(newVal.from, orderedSizeCoding)
             }
-        }); 
+        });
 
         ntwrk.allNodes = [].concat(ntwrk.filteredData.nodes.data);
         ntwrk.allEdges = [].concat(ntwrk.filteredData.edges.data);
-        updateLabelVisibility(d3.mean(orderedSizeCoding), orderedSizeCoding);  
+        updateLabelVisibility(d3.mean(orderedSizeCoding), orderedSizeCoding);
 
         slider = $("#range").data("ionRangeSlider");
-        
-        
+
+
         var sliderFormElem = $("#sliderForm");
         var sliderFormScope = angular.element(sliderFormElem).scope();
         nodeSize.setTitle("Number of grants")
         nodeSize.setNote("Based on zoom level (" + Utilities.round(ntwrk.zoom.scale(), 1) + "x)")
-        nodeSize.updateNodeSize(configs.forceNetwork01.nodes.styleEncoding.size.range);
-        nodeSize.updateTextFromFunc(function(d) {
-            return ntwrk.Scales.nodeSizeScale.invert(d / 2) / ntwrk.zoom.scale();
-        });  
+        // nodeSize.updateNodeSize(configs.forceNetwork01.nodes.styleEncoding.size.range);
+        nodeSize.updateNodeSize(configs.forceNetwork01.nodes.styleEncoding.size.range,ntwrk.zoom.scale(), "network");
+        nodeSize.updateTextFromFunc("network");
 
         edgeSize.setTitle("#Co-authored Grants")
         edgeSize.setNote("Based on zoom level (" + Utilities.round(ntwrk.zoom.scale(), 1) + "x)")
@@ -154,9 +153,11 @@ events.forceNetwork01 = function(ntwrk){
 
         ntwrk.SVG.on("mousewheel", function() {
             setTimeout(function() {
-                nodeSize.updateTextFromFunc(function(d) {
-                    return ntwrk.Scales.nodeSizeScale.invert(d / 2) / ntwrk.zoom.scale();
-                });
+                // nodeSize.updateTextFromFunc(function(d) {
+                //     return ntwrk.Scales.nodeSizeScale.invert(d / 2) / ntwrk.zoom.scale();
+                // });
+                nodeSize.updateNodeSize(configs.forceNetwork01.nodes.styleEncoding.size.range, ntwrk.zoom.scale(), "network");
+                nodeSize.updateTextFromFunc("network");
                 edgeSize.updateTextFromFunc(function(d) {
                     return ntwrk.Scales.edgeSizeScale.invert(d / 2) / ntwrk.zoom.scale();
                 });
@@ -164,16 +165,27 @@ events.forceNetwork01 = function(ntwrk){
                 edgeSize.setNote("Based on zoom level (" + Utilities.round(ntwrk.zoom.scale(), 1) + "x)")
             }, 10);
         });
-        
-        
+
+
     }
 };
 dataprep.forceNetwork01 = function(ntwrk) {
     ntwrk.click=0;
     nodeIdMap={};
+    ntwrk.maxGrants = 1;
+    ntwrk.minGrants = 1;
+
     ntwrk.filteredData.nodes.data.map(function(d, i) {
         d.index = i;
         nodeIdMap[d.id] = d.index;
+
+        if (d.number_of_grants>ntwrk.maxGrants){
+            ntwrk.maxGrants = d.number_of_grants;
+        }
+        if(d.number_of_grants<ntwrk.minGrants){
+            ntwrk.minGrants = d.number_of_grants;
+        }
+
         return d;
     })
     ntwrk.filteredData.edges.data.map(function(d, i) {
