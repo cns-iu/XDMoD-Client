@@ -194,4 +194,14 @@ dataprep.forceNetwork01 = function(ntwrk) {
         d.target = nodeIdMap[d.target];
         return d;
     })
+
+    ntwrk.Scales.rScale = d3.scale[configs.forceNetwork01.nodes.styleEncoding.size.scaleType]()
+    .domain(d3.extent(  ntwrk.filteredData.nodes.data, function(d, i) {
+          return d.number_of_grants;
+      }))
+    .range(configs.forceNetwork01.nodes.styleEncoding.size.range)
+
+    ntwrk.maxRadius = ntwrk.Scales.rScale(ntwrk.maxGrants);
+    ntwrk.minRadius = ntwrk.Scales.rScale(ntwrk.minGrants);
+
 };

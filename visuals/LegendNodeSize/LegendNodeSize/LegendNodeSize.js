@@ -86,7 +86,7 @@ visualizationFunctions.LegendNodeSize = function(element, data, opts) {
             var midNode = context.getMidNode();
             var maxNode = context.getMaxNode();
 
-            if (viz == "network" || viz == "scimap"){
+            if (viz == "network"){
                     minNode.transition()
   	                 .duration(100)
                         .attr("r", arr[0]*zoom);
@@ -97,21 +97,7 @@ visualizationFunctions.LegendNodeSize = function(element, data, opts) {
   	                 .duration(100)
                         .attr("r", arr[1]*zoom);
                       }
-            if (viz == "geomap"){
-              var sortedArr = prosym01.spatialsankey.nodeSizeArr.sort();
-              var max = sortedArr[sortedArr.length-1];
-              var mid = (sortedArr[sortedArr.length-1] + sortedArr[0])/2;
-              var min = sortedArr[0];
-                      minNode.transition()
-  	                     .duration(100)
-                          .attr("r", min);
-                      midNode.transition()
-    	                 .duration(100)
-                          .attr("r", mid);
-                      maxNode.transition()
-    	                 .duration(100)
-                          .attr("r", max);
-            }
+
 
               }
 
