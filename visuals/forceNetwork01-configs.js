@@ -19,7 +19,7 @@ configs.forceNetwork01 = {
         "styleEncoding": {
             "strokeWidth": {
                 "attr": "number_of_grants",
-                "range": [1,3.5,8]
+                "range": [1,8]
             },
             "opacity": {
                 "attr": "value",
