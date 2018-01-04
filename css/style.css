@@ -520,7 +520,6 @@ dl, dd, dt{
 }
 
 .modal-dialog{
-  position: relative;
   top:90px;
   overflow-y: hidden;
 }
@@ -569,4 +568,3 @@ dl, dd, dt{
   left:10px;
   z-index: 10;
 }
-
