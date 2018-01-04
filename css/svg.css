@@ -7,39 +7,22 @@
 
 
 
-/*//temp axis style*/
+/* axis style*/
 .axis path,
 .axis line {
     fill: none;
     shape-rendering: crispEdges;
 }
-
-.axis .minor line {
-}
-
 .tick line {
     stroke: #a4a4a4 !important;
     stroke-dasharray: 10;
     opacity: 1;
   }
-
-
-.legend line   {
-  /*stroke: #a4a4a4;
-  stroke-dasharray: 10;
-  opacity: 1;
-  stroke: 1;*/
-/*  stroke-width: 2px;*/
-}
-
-
 .axis text {
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     font-weight: 400;
 }
-
-
 
 .hexagon {
     cursor: pointer;
@@ -87,9 +70,6 @@
     shape-rendering: crispEdges;
 }
 
-.wvf-axis.line {}
-
-
 /* ---- Node Styles ---- */
 
 .forceNetwork01 .wvf-node {
@@ -97,7 +77,6 @@
     stroke-width: 1px;
     cursor: pointer;
 }
-
 
 .sankey01 .wvf-node.selected {
     opacity:1;
@@ -107,7 +86,6 @@
 
 .sankey01 .wvf-node {
     opacity: 0.75;
-    /*fill: #ffe8c8;*/
     stroke:black;
     stroke-width: 0.5px;
     cursor: move;
@@ -157,22 +135,11 @@
     text-transform: capitalize;
     font-size: 16px;
     z-index: 9;
-
-
 }
 
 .wvf-label:hover {
     cursor: pointer;
-
 }
-
-.wvf-label.selected {}
-
-.wvf-label.deselected {
-
-}
-
-.wvf-label.focused {}
 
 .wvf-label-mid {
     font-size: 13px;
@@ -183,19 +150,7 @@
 .wvf-label-mid:hover {
     cursor: pointer;
     font-weight: 600;
-/*    stroke: black;
-    stroke-width: .05px;
-    color: white;*/
-
 }
-
-.wvf-label-mid.selected {}
-
-.wvf-label-mid.deselected {
-
-}
-
-.wvf-label-mid.focused {}
 
 .columnlabel{
     text-transform: capitalize;
@@ -203,9 +158,8 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
 }
+
 /* ---- Edge Styles ---- */
-
-
 .forceNetwork01 .wvf-edge{
     stroke: rgb(67,70,72) !important;
 }
@@ -225,22 +179,14 @@
 }
 
 .sankey01 .wvf-edge.selected {
-
     opacity: 0.7;
-
-
     }
 
 .sankey01 .wvf-edge.deselected {
     opacity: 0;
 }
 
-
-.wvf-edge.focused {}
-
-
 /* --- Rectangle Styles ---- */
-
 .wvf-rect {
  fill:lightgrey;
 }
@@ -248,34 +194,6 @@
 .wvf-rect.selected {
     stroke-width: 3px;
 }
-.wvf-rect.deselected {}
-
-.wvf-rect.focused {}
-
-
-/* --- Path Styles  ----- */
-
-
-
-/* --- Area Styles  ----- */
-
-
-.wvf-area.selected {}
-
-.wvf-area.deselected {}
-
-.wvf-area.focused {}
-
-
-/* --- Shape Styles  ----- */
-
-.wvf-shape.selected {}
-
-.wvf-shape.deselected {}
-
-.wvf-shape.focused {}
-
-
 
 [class*="Chemical"] rect {
     fill: rgb(97,255,255) !important;

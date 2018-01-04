@@ -259,10 +259,6 @@
                                 forceNetwork01.SVG.nodeG.filter(function(d5, i5) {
                                    
                                     if(d5.id == d4.source.id || d5.id == d4.target.id) {
-                                                // barChart01.SVG.barGroups.selectAll("text").forEach(function(d6,i6){
-                                                // if (d6[0].innerHTML == d2.name) d6[0].setAttribute("opacity",1);
-                                                
-                                                  // })
                                                   return d4.id;    
                                               }
                                           }).selectAll("circle").attr("opacity", 1)
@@ -371,10 +367,6 @@
                             forceNetwork01.SVG.nodeG.filter(function(d5, i5) {
                              
                                 if(d5.id == d4.source.id || d5.id == d4.target.id) {
-                                                // barChart01.SVG.barGroups.selectAll("text").forEach(function(d6,i6){
-                                                // if (d6[0].innerHTML == d2.name) d6[0].setAttribute("opacity",1);
-                                                
-                                                  // })
                                                   return d4.id;    
                                               }
                                           }).selectAll("circle").attr("opacity", 1)

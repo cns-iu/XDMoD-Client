@@ -1,7 +1,6 @@
 visualizationFunctions.ForceNetwork = function(element, data, opts) {
     var context = this;
     var selected = null;
-    //TODO: Not all events are unbound properly. Resetting the visualization just doesn't work. Do data filters instead if you need :)
     this.ResetVis = function() { console.warn("Cannot reset Force Network visualization.") }
     this.VisFunc = function() {
         context.SVG = context.config.easySVG(element[0], {
@@ -10,11 +9,8 @@ visualizationFunctions.ForceNetwork = function(element, data, opts) {
             background: false,
 
         }).attr("transform", "translate(" + (context.config.margins.left + context.config.dims.width / 2) + "," + (context.config.margins.top + context.config.dims.height / 2) + ")")
-            //Fits the nodes to the canvas a little bit better.
-
-
-
-            context.Scales.nodeSizeScale = Utilities.makeDynamicScaleNew(d3.extent(context.filteredData.nodes.data, function(d, i) {
+            
+	context.Scales.nodeSizeScale = Utilities.makeDynamicScaleNew(d3.extent(context.filteredData.nodes.data, function(d, i) {
                 return d[context.config.meta.nodes.styleEncoding.size.attr]
             }), context.config.meta.nodes.styleEncoding.size.range)
 
@@ -33,8 +29,6 @@ visualizationFunctions.ForceNetwork = function(element, data, opts) {
                 return d[context.config.meta.edges.styleEncoding.opacity.attr]
             }), context.config.meta.edges.styleEncoding.opacity.range)
 
-
-
             var k = Math.sqrt(context.filteredData.nodes.data.length / (context.config.dims.width * context.config.dims.height));
 
             context.SVG.background = context.SVG.append("rect")
@@ -45,7 +39,6 @@ visualizationFunctions.ForceNetwork = function(element, data, opts) {
             .attr("y", 0)
             .attr("transform", "translate(" + -(context.config.margins.left + context.config.dims.width) + "," + -(context.config.margins.top + context.config.dims.height) + ")")
             context.SVG.force = null;
-
 
             context.SVG.force = d3.layout.force()
             .nodes(context.filteredData.nodes.data)
@@ -339,8 +332,6 @@ visualizationFunctions.ForceNetwork = function(element, data, opts) {
                 })
 
 
-
-        //TODO: Fix this. Is it an issue with the canvas dimensions?
         function forceBoundsCollisionCheck(val, lim, off) {
             var offset = 0;
             if (off) {
@@ -372,69 +363,7 @@ visualizationFunctions.ForceNetwork = function(element, data, opts) {
 
     }
 
-  /*  this.configSchema = {
-       "nodes": {
-        "styleEncoding": {
-            "size": {
-                "attr": "number_of_grants",
-                "range": [5,11,17],
-                "scale": "linear"
-            },
-            "color": {
-                "attr": "total_amount",
-                "range": ["#FFFFFF","#3182bd"] //optional. Must be a minimum of two values. Will use the attr color.attr property to fill in bars on the defined scale.
-            }
-        },
-        "identifier": {
-            "attr": "name" //Unique identifier
-        }
-    },
-    "edges": {
-        "styleEncoding": {
-            "strokeWidth": {
-                "attr": "number_of_grants",
-                "range": [1,3.5,8]
-            },
-            "opacity": {
-                "attr": "value",
-                "range": [.5, 1]
-            },
-            "color": {
-                "attr": "",
-                "range": ["black"]
-            }
-        },
-        "identifier": {
-            "attr": "id" //Unique identifier
-        }
-    },
-    "labels": {
-        "identifier": {
-            "attr": "name" //Unique identifier
-        },
-        "styleEncoding": {
-            "size": {
-                "attr": "numPapers",
-                "range": [23, 35],
-                "scale": "linear"
-            }
-        }
-    },
-    "visualization": { //optional
-        "forceLayout": {
-            "linkStrength": 0.9,
-            "friction": .9,
-            "linkDistance": 50,
-            "charge": null,
-            "chargeDistance": null,
-            "gravity": null,
-            "theta": 0,
-            "alpha": 0.2
-        }
-    }
-};*/
 this.config = this.CreateBaseConfig();
-
 
 return context;
 }

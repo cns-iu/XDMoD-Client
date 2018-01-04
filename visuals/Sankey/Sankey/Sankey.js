@@ -392,7 +392,6 @@ visualizationFunctions.Sankey = function(element, data, opts) {
             context.SVG.nodes.selectAll("rect").each(function(d4,i4){
                 d4.click=0;
             })
-    //d3.event.stopPropagation();
 })
 
 
@@ -444,7 +443,6 @@ visualizationFunctions.Sankey = function(element, data, opts) {
            ) + "," + (
            d.y = Math.max(0, Math.min(context.config.dims.fixedHeight , d3.event.y))
            ) + ")");
-// sankey.relayout();
 context.SVG.edges.attr("d", path);
 
 
@@ -481,7 +479,6 @@ context.SVG.nodes.append("text")
 .text(function(d) {
     var stats=""
     if(d.i == 0){
-        /*name = d.name.replace(/\s/g, '').toUpperCase()*/
        stats = context.filteredData.resource_users[d.name];
         var txt = d.name.replaceAll("|", "").replaceAll("dotdot", ".");
         if (context.config.meta.labels.prettyMap[txt.trim()]) {
@@ -563,16 +560,6 @@ function createToolTips() {
         {
             return "#Publications: "+Utilities.formatValue["number"](context.filteredData.publication_numbers_discipline[d.name]);
         }
-      /*  var name = d.name.replaceAll("|", "").replaceAll("dotdot", ".").trim();
-        if (context.config.meta.labels.prettyMap[name]) {
-            name = context.config.meta.labels.prettyMap[name]
-        } else {
-            name = name
-        }
-
-        var val1 = name + "\n" + "" + Utilities.formatValue[""](d.value);
-        var val2 = val1.replaceAll("|", "").replaceAll("dotdot", ".").trim();
-        return val2;*/
     });
     return context.SVG.selectAll(".tooltip")
 }
@@ -674,12 +661,6 @@ function formatData() {
         })
         .map(graph.nodes));
 
-    /*var expensesCount = d3.nest()
-  .key(function(d) { return d.name; })
-  .rollup(function(v) { return v.GrantSize; })
- 
-  console.log(JSON.stringify(expensesCount));*/
-
   graph.links.forEach(function(d, i) {
     graph.links[i].source = graph.nodes.indexOf(graph.links[i].source);
     graph.links[i].target = graph.nodes.indexOf(graph.links[i].target);
@@ -688,16 +669,11 @@ function formatData() {
   graph.nodes.forEach(function(d, i) {
     graph.nodes[i] = { "name": d, "click": 0 };
 });
-        // console.log(graph.nodes)
         graph.links.sort(function(a, b) {
             if (a.value == b.value) return -1
                 return a.value - b.value;
         });
 
-      /*  var k = d3.nest()
-        .key(function(d) { return d.PubID; })
-        .entries(context.filteredData.records.data);
-        console.log(JSON.stringify(k));*/
         return graph;
     }
 

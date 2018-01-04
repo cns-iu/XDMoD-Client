@@ -116,7 +116,6 @@ events.forceNetwork01 = function(ntwrk){
             min: d3.min(orderedSizeCoding),
             max: d3.max(orderedSizeCoding),
             from: Math.ceil(d3.mean(orderedSizeCoding)),
-            // type: 'double',
             step: 1,
             grid: false,
             onChange: function(newVal) {
@@ -136,7 +135,6 @@ events.forceNetwork01 = function(ntwrk){
         var sliderFormScope = angular.element(sliderFormElem).scope();
         nodeSize.setTitle("Number of grants")
         nodeSize.setNote("Based on zoom level (" + Utilities.round(ntwrk.zoom.scale(), 1) + "x)")
-        // nodeSize.updateNodeSize(configs.forceNetwork01.nodes.styleEncoding.size.range);
         nodeSize.updateNodeSize(configs.forceNetwork01.nodes.styleEncoding.size.range,ntwrk.zoom.scale(), "network");
         nodeSize.updateTextFromFunc("network");
 
@@ -151,14 +149,8 @@ events.forceNetwork01 = function(ntwrk){
 
         ntwrk.SVG.on("mousewheel", function() {
             setTimeout(function() {
-                // nodeSize.updateTextFromFunc(function(d) {
-                //     return ntwrk.Scales.nodeSizeScale.invert(d / 2) / ntwrk.zoom.scale();
-                // });
                 nodeSize.updateNodeSize(configs.forceNetwork01.nodes.styleEncoding.size.range, ntwrk.zoom.scale(), "network");
                 nodeSize.updateTextFromFunc("network");
-                // edgeSize.updateTextFromFunc(function(d) {
-                //     return ntwrk.Scales.edgeSizeScale.invert(d / 2) / ntwrk.zoom.scale();
-                // });
                 edgeSize.updateEdgeSize(configs.forceNetwork01.edges.styleEncoding.strokeWidth.range, ntwrk.zoom.scale());
                 nodeSize.setNote("Based on zoom level (" + Utilities.round(ntwrk.zoom.scale(), 1) + "x)")
                 edgeSize.setNote("Based on zoom level (" + Utilities.round(ntwrk.zoom.scale(), 1) + "x)")
@@ -202,14 +194,5 @@ dataprep.forceNetwork01 = function(ntwrk) {
         }
         return d;
     })
-
-    // ntwrk.Scales.rScale = d3.scale[configs.forceNetwork01.nodes.styleEncoding.size.scaleType]()
-    // .domain(d3.extent(  ntwrk.filteredData.nodes.data, function(d, i) {
-    //       return d.number_of_grants;
-    //   }))
-    // .range(configs.forceNetwork01.nodes.styleEncoding.size.range)
-    //
-    // ntwrk.maxRadius = ntwrk.Scales.rScale(ntwrk.maxGrants);
-    // ntwrk.minRadius = ntwrk.Scales.rScale(ntwrk.minGrants);
 
 };
