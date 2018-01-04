@@ -3,57 +3,33 @@ var scripts = [{
     }, {
         "svg.css": "css/svg.css"
     }, {
-        "roboto": "css/fonts/roboto.css"
+        "opensans": "../gui/lib/googleFonts-openSans/css"
     }, {
-        "opensans": "css/fonts/opensans.css"
-    },
-    {
-        "bootstrap": "css/bootstrap.min.css"
-    },
-    {
-        "jQuery": "lib/jquery-1.11.2.min.js"
+        "jQuery": "../gui/lib/jquery/jquery-1.12.4.min.js"
     }, {
-        "bootstrap.min.js": "lib/bootstrap.min.js"
+        "bootstrap.min.js": "../gui/lib/bootstrap/dist/js/bootstrap.min.js"
     }, {
-        "d3.v3.min.js": "lib/d3.v3.min.js"
+        "d3.v3.min.js": "../gui/lib/d3.v3/d3.v3.min.js"
     }, {
         "head.js": "lib/head.js"
     }, {
-        "immutable.js": "lib/immutable.js"
-    }, {
-        "jquery-1.11.2.min.js": "lib/jquery-1.11.2.min.js"
-    }, {
-        "json2.js": "lib/json2.js"
-    }, {
-        "matchMedia": "lib/fills/matchMedia.js"
-    }, {
-        "matchMediaListener": "lib/fills/matchMedia.addListener.js"
+        "immutable.js": "../gui/lib/immutablejs/immutable.js"
     }, {
         "DatasourceMap.js": "src/DatasourceMap.js"
     }, {
         "Utilities.js": "src/Utilities.js"
+    }, 
+      {
+        "ion.rangeSlider.css": "../gui/lib/ionRangeSlider2/css/ion.rangeSlider.css"
     }, {
-        "journalMapping.js": "data/journalMapping.js"
+        "ion.rangeSlider.skinModern.css": "../gui/lib/ionRangeSlider2/css/ion.rangeSlider.skinModern.css"
     }, {
-        "ion.rangeSlider.css": "lib/ion.rangeSlider/css/ion.rangeSlider.css"
+        "normalize.css": "../gui/lib/ionRangeSlider2/css/normalize.css"
     }, {
-        "ion.rangeSlider.skinModern.css": "lib/ion.rangeSlider/css/ion.rangeSlider.skinModern.css"
+        "ion.rangeSlider.js": "../gui/lib/ionRangeSlider2/js/ion.rangeSlider.min.js"
     }, {
-        "normalize.css": "lib/ion.rangeSlider/css/normalize.css"
-    }, {
-        "ion.rangeSlider.js": "lib/ion.rangeSlider/js/ion-rangeSlider/ion.rangeSlider.js"
-    }, {
-        "thenBy": "lib/thenBy.js"
-    },
-
-    {
         "Visualization.js": "src/Visualization.js"
-    },
-    {
-    "container-update.css": "css/container-update.css"
-}, {
-    "containers.css": "css/containers.css"
-}
+    }
 ]
 
 head.js(scripts);
@@ -62,30 +38,29 @@ head.js(scripts);
 head.ready(Object.keys(scripts[scripts.length - 2])[0], function() {
     head.ready(document, function() {
         head.js({
-            "dropdown.min.js": "lib/dropdown.min.js"
+            "drawer.min.js": "../gui/lib/drawerjs/drawer.min.js"
+        },{
+            'ng-table.min.js': '../gui/lib/ng-tablejs/ng-table.min.js'
+        },
+	 {
+            'angular-material.css': '../gui/lib/angularMaterialcss/angular-material.min.css'
+        },
+	{
+            'angular-animate.min.js': '../gui/lib/angularAnimatejs/angular-animate.min.js'
         }, {
-            "iscroll.min.js": "lib/iscroll.min.js"
+            'angular-route.min.js': '../gui/lib/angularRoutejs/angular-route.min.js'
         }, {
-            "drawer.min.js": "lib/drawer.min.js"
+            'angular-aria.min.js': '../gui/lib/angularAriajs/angular-aria.min.js'
         }, {
-            'ng-table.min.js': 'lib/angular/ng-table.min.js'
-        }, {
-            'angular-material.css': 'lib/angular/angular-material.css'
-        }, {
-            'docs.css': 'lib/angular/docs.css'
-        }, {
-            'angular-animate.min.js': 'lib/angular/angular-animate.min.js'
-        }, {
-            'angular-route.min.js': 'lib/angular/angular-route.min.js'
-        }, {
-            'angular-aria.min.js': 'lib/angular/angular-aria.min.js'
-        }, {
-            'angular-messages.min.js': 'lib/angular/angular-messages.min.js'
-        }, {
-            'svg-assets-cache.js': 'lib/angular/svg-assets-cache.js'
-        }, {
-            'angular-material.js': 'lib/angular/angular-material.js'
-        }, {
+            'angular-messages.min.js': '../gui/lib/angularMessagesjs/angular-messages.min.js'
+        }, 
+	{
+            'svg-assets-cache.js': 'lib/svg-assets-cache.js'
+        }, 
+	{
+            'angular-material.js': '../gui/lib/angularMaterialjs/angular-material.min.js'
+        }, 
+	{
             'App.js': 'src/App.js'
         }, {
             'ViewControllers': 'src/ViewControllers.js'
