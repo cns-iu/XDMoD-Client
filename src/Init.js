@@ -37,7 +37,7 @@ var scripts = [{
     }, {
         "ion.rangeSlider.css": "lib/ion.rangeSlider/css/ion.rangeSlider.css"
     }, {
-        "ion.rangeSlider.skinModern.css": "lib/ion.rangeSlider/css/ion.rangeSlider.skinModern.css"
+        "ion.rangeSlider.skinXDMoD.css": "css/ion.rangeSlider.skinXDMoD.css"
     }, {
         "normalize.css": "lib/ion.rangeSlider/css/normalize.css"
     }, {
