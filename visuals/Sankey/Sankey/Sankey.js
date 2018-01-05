@@ -23,12 +23,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
   var context = this
   function setDisciplineColors(colors){
       context.disciplineColors = colors;
-      context.SVG.group = createVisGroup();
-      context.SVG.edges = createEdges();
       context.SVG.nodes = createNodes();
-      context.SVG.columnLabels = createColumnLabels();
-      context.SVG.tooltips = createToolTips();
-      applySVGEvents();
   }
   d3.json("data/disciplineColors.json", setDisciplineColors);
   this.config = this.CreateBaseConfig();
@@ -63,7 +58,14 @@ visualizationFunctions.Sankey = function(element, data, opts) {
     .nodes(graph.nodes)
     .links(graph.links)
     .layout(0);
+    context.SVG.group = createVisGroup();
+    context.SVG.edges = createEdges();
+    // context.SVG.nodes = createNodes();
+    context.SVG.columnLabels = createColumnLabels();
+    context.SVG.tooltips = createToolTips();
 
+
+    applySVGEvents();
     function createColumnLabels() {
       context.SVG.columnLabels = context.SVG.group.append("g");
       context.config.meta.other.categories.forEach(function(d, i) {
