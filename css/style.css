@@ -561,6 +561,7 @@ dl, dd, dt{
   top: 10px;
   left:90px;
   z-index: 10;
+  color:black;
 }
 
 
@@ -569,6 +570,7 @@ dl, dd, dt{
   top: 10px;
   left:0px;
   z-index: 10;
+  color:black;
 }
 
 #copiUsageButton{
@@ -576,6 +578,7 @@ dl, dd, dt{
   top: 90px;
   left:10px;
   z-index: 10;
+  color:black;
 }
 
 
@@ -584,4 +587,5 @@ dl, dd, dt{
   top: 50px;
   left:10px;
   z-index: 10;
+  color:black;
 }
