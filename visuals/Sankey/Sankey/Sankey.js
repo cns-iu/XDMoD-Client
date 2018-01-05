@@ -457,7 +457,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
     })
     .attr("width", sankey.nodeWidth())
     .attr("fill", function(d){
-      d3.json("../../../data/disciplineColors.json", function(data) {
+      d3.json("data/disciplineColors.json", function(data) {
         console.log(data[0]);
       });
       if (d.i == 0){
