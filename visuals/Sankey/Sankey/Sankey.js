@@ -466,7 +466,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
         if(d.i == 1){
             if(d.name.indexOf("NSF")>=0)
               color = data["NSF"];
-            else color = data["NIH"];  
+            else color = data["NIH"];
           }
 
         if (d.i == 2)
