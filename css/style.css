@@ -524,6 +524,10 @@ dl, dd, dt{
   overflow-y: hidden;
 }
 
+.modal-body{
+  height: 210px;
+  overflow-y: scroll;
+}
 
 .modal-header-primary {
   color:#fff;
