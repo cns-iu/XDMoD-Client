@@ -276,7 +276,7 @@
 .wvf-shape.focused {}
 
 
-
+/*
 [class*="Chemical"] rect {
     fill: rgb(97,255,255) !important;
 }
@@ -321,4 +321,4 @@
 }
 [class*="Earth Sciences"] rect {
     fill: #9B180F !important;
-}
+} */
