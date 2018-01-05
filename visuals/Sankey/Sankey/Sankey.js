@@ -458,19 +458,13 @@ visualizationFunctions.Sankey = function(element, data, opts) {
     .attr("width", sankey.nodeWidth())
     .attr("fill", function(d){
       d3.json("data/disciplineColors.json", function(data) {
-        console.log(data[d.name]);
+        console.log(d.name);
+        if (d.i == 0)
+          return data[sankey01.resource_map[d.name]];
+
+        else if(d.i == 1 || d.i == 2)
+          return data[d.name];
       });
-      if (d.i == 0){
-        if(sankey01.resource_map[d.name] == "COMPUTE")
-        return "#efe986";
-        if(sankey01.resource_map[d.name] == "STORAGE")
-        return "#0eb49b";
-      }
-      if(d.i==1){
-        if(d.name.indexOf("NSF")>=0)
-        return "#00559b";
-        else return "#99000D";
-      }
     })
 
     context.SVG.nodes.append("text")
