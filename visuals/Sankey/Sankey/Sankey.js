@@ -23,6 +23,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
   var context = this
   function setDisciplineColors(colors){
       context.disciplineColors = colors;
+      context.SVG.nodes = createNodes();
   }
   d3.json("data/disciplineColors.json", setDisciplineColors);
   this.config = this.CreateBaseConfig();
@@ -44,7 +45,6 @@ visualizationFunctions.Sankey = function(element, data, opts) {
     .attr("opacity", .00000001)
 
     var defaultEdgeColor = "";
-
     var offsetW = 4;
     var offsetH = 300;
     var sankeyCategories = context.config.meta.other.categories
@@ -60,7 +60,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
     .layout(0);
     context.SVG.group = createVisGroup();
     context.SVG.edges = createEdges();
-    context.SVG.nodes = createNodes();
+    // context.SVG.nodes = createNodes();
     context.SVG.columnLabels = createColumnLabels();
     context.SVG.tooltips = createToolTips();
 
