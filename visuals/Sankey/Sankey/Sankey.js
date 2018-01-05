@@ -459,7 +459,6 @@ visualizationFunctions.Sankey = function(element, data, opts) {
     })
     .attr("width", sankey.nodeWidth())
     .attr("fill", function(d){
-      console.log(d.name);
       if (d.i == 0)
         return context.disciplineColors[sankey01.resource_map[d.name]];
       if(d.i == 1){
