@@ -5,7 +5,7 @@ var scripts = [{
     }, {
         "roboto": "css/fonts/roboto.css"
     }, {
-        "opensans": "css/fonts/opensans.css"
+        "opensans": "lib/open-sans/open-sans.css"
     },
     {
         "bootstrap": "css/bootstrap.min.css"
@@ -32,7 +32,7 @@ var scripts = [{
         "DatasourceMap.js": "src/DatasourceMap.js"
     }, {
         "Utilities.js": "src/Utilities.js"
-    }, {
+    },
         "journalMapping.js": "data/journalMapping.js"
     }, {
         "ion.rangeSlider.css": "lib/ion.rangeSlider/css/ion.rangeSlider.css"
