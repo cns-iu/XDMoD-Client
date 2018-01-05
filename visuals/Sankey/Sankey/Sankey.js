@@ -458,7 +458,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
     .attr("width", sankey.nodeWidth())
     .attr("fill", function(d){
       d3.json("data/disciplineColors.json", function(data) {
-        console.log(data);
+        console.log(data[d.name]);
       });
       if (d.i == 0){
         if(sankey01.resource_map[d.name] == "COMPUTE")
