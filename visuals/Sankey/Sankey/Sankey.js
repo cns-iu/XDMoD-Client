@@ -54,14 +54,17 @@ visualizationFunctions.Sankey = function(element, data, opts) {
         .nodes(graph.nodes)
         .links(graph.links)
         .layout(0);
-        context.SVG.group = createVisGroup();
-        context.SVG.edges = createEdges();
-        context.SVG.nodes = createNodes();
-        context.SVG.columnLabels = createColumnLabels();
-        context.SVG.tooltips = createToolTips();
+        function setDisciplineColors(colors){
+            context.disciplineColors = colors;
+            context.SVG.group = createVisGroup();
+            context.SVG.edges = createEdges();
+            context.SVG.nodes = createNodes();
+            context.SVG.columnLabels = createColumnLabels();
+            context.SVG.tooltips = createToolTips();
+            applySVGEvents();
+        }
+        d3.json("data/disciplineColors.json", setDisciplineColors);
 
-
-        applySVGEvents();
         function createColumnLabels() {
          context.SVG.columnLabels = context.SVG.group.append("g");
          context.config.meta.other.categories.forEach(function(d, i) {
@@ -150,7 +153,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
 
                 .style("text-anchor","mid")
                 .style("font-size",14)
-            }    
+            }
         })
 
 
@@ -164,32 +167,32 @@ visualizationFunctions.Sankey = function(element, data, opts) {
         function customEdgeFilter(node, edge){
             switch(node.i){
                 case 0: if(node.name == edge.uid.split("|")[1])
-                return edge; 
-                else break;    
+                return edge;
+                else break;
                 case 1: if(node.name == edge.uid.split("|")[2])
                 return edge;
-                else break;     
+                else break;
                 case 2: if((node.name.indexOf(edge.uid.split("|")[3]))!=-1)
                 return edge;
-                else break;   
+                else break;
 
             }
-        } 
+        }
 
         function customNodeFilter(node, edge){
             switch(node.i){
                 case 0: if(node.name == edge.uid.split("|")[1])
-                return node; 
-                else break;    
+                return node;
+                else break;
                 case 1: if(node.name == edge.uid.split("|")[2])
                 return node;
-                else break;     
+                else break;
                 case 2: if((node.name.indexOf(edge.uid.split("|")[3]))!=-1)
                 return node;
-                else break;   
+                else break;
 
             }
-        } 
+        }
         context.SVG.nodes.selectAll("rect")
 
         .on("mouseout", function(d, i) {
@@ -204,7 +207,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
             if (d2.click==0)
                 d3.select(this).classed("selected", false).classed("deselected", false).style("stroke", defaultEdgeColor);
 
-        });  
+        });
            context.SVG.edges.filter(function(d){
             if(d.click == 1)
             {
@@ -213,7 +216,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                   return customEdgeFilter(d,d5);
               }).classed("selected",true);
             }
-        }); 
+        });
 
        })
         .on("mouseover", function(d) {
@@ -241,7 +244,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
 
             context.SVG.edges.filter(function(d5){
                 return customEdgeFilter(d,d5);
-                
+
             }).each(function(d1, i1) {
                 if (d1.click==0)
                     {   d1.click = 1;
@@ -249,7 +252,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                         d3.select(this).style("stroke", d.color).classed("selected", true).moveToFront();
                         context.SVG.nodes.selectAll("rect").filter(function(d8){
                          return customNodeFilter(d8,d1);
-                     }).classed("selected",true); 
+                     }).classed("selected",true);
                     }
                 })
 
@@ -257,7 +260,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
         })
         .on("dblclick", function(d) {
 
-            d.click=0; 
+            d.click=0;
             d3.select(this).classed("selected", false);
             context.SVG.edges.filter(function(d5){
                 return customEdgeFilter(d,d5);
@@ -267,10 +270,10 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                 {
                     d2.click = 0;
                     d3.select(this).classed("selected", false).classed("deselected", false).style("stroke", defaultEdgeColor);
-                    
+
                 }
 
-            }); 
+            });
             context.SVG.nodes.filter(function(d1){
                 if ((d1.name != d.name) && (d1.click==1))
                     return d1;
@@ -287,12 +290,12 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                     d3.select(this).style("stroke", d2.color).classed("selected", true).moveToFront();
                     context.SVG.nodes.selectAll("rect").filter(function(d9,i9){
                        return customNodeFilter(d9,d4);
-                   }).classed("selected",true);                
+                   }).classed("selected",true);
 
                 }
-            });   
+            });
         })
-            
+
         })
 
 
@@ -305,7 +308,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
             var color;
             var className;
             var clickedLocal=false;
-            d3.select(this).data().forEach(function(d1, i1) {      
+            d3.select(this).data().forEach(function(d1, i1) {
 
                 className = d1.uid;
 
@@ -347,7 +350,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                     }).classed("selected",true);
 
                     d3.select(this).style("stroke", color).classed("selected", true).moveToFront();
-                }) 
+                })
             }
         })
         .on("mouseout", function(d, i) {
@@ -359,7 +362,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                 d3.select(this).classed("selected", false).classed("deselected", false).style("stroke", defaultEdgeColor);
                 context.SVG.nodes.selectAll("rect").filter(function(d9,i9){
                  return customNodeFilter(d9,d);
-             }).classed("selected",false);  
+             }).classed("selected",false);
             });
 
         }
@@ -371,7 +374,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
                 context.SVG.nodes.selectAll("rect").filter(function(d9,i9){
                  return customNodeFilter(d9,d1);
              }).classed("selected",true);
-            }  
+            }
         });
 
 
@@ -437,7 +440,7 @@ visualizationFunctions.Sankey = function(element, data, opts) {
    // the function for moving the nodes
    function dragmove(d) {
     if (this.nextSibling) this.parentNode.appendChild(this);
-    d3.select(this).attr("transform", 
+    d3.select(this).attr("transform",
         "translate(" + (
            d.x = Math.max(0, Math.min(context.config.dims.fixedWidth - offsetW - d.dx, d3.event.x))
            ) + "," + (
@@ -455,18 +458,16 @@ context.SVG.nodes.append("rect")
 })
 .attr("width", sankey.nodeWidth())
  .attr("fill", function(d){
-            if (d.i == 0){
-            if(sankey01.resource_map[d.name] == "COMPUTE")
-                return "#efe986";
-            if(sankey01.resource_map[d.name] == "STORAGE")
-                return "#0eb49b";
-        }
-        if(d.i==1){
-            if(d.name.indexOf("NSF")>=0)
-                return "#00559b";
-            else return "#99000D";
-        }
-        })
+   if (d.i == 0)
+     return context.disciplineColors[sankey01.resource_map[d.name]];
+   if(d.i == 1){
+     if(d.name.indexOf("NSF")>=0)
+       return context.disciplineColors["NSF"];
+     else return context.disciplineColors["NIH"];
+   }
+   if (d.i == 2)
+     return context.disciplineColors[d.name];
+   });
 
 context.SVG.nodes.append("text")
 .attr("x", -6)
@@ -504,12 +505,12 @@ else return txt+" ("+Utilities.formatValue["currency"](stats1,'$')+")";
 
 if(d.i == 2){
     var stats2=""
-    stats2 = context.filteredData.publication_numbers_discipline[d.name] 
+    stats2 = context.filteredData.publication_numbers_discipline[d.name]
     var txt = d.name.replaceAll("|", "").replaceAll("dotdot", ".");
     if (context.config.meta.labels.prettyMap[txt.trim()]) {
         return context.config.meta.labels.prettyMap[txt.trim()]+" (Publications: "+Utilities.formatValue["number"](stats2)+")";
     }
-    
+
  return txt+" ("+Utilities.formatValue["number"](stats2)+")";
 }
 
@@ -554,7 +555,7 @@ function createToolTips() {
         }
         if(d.i==1)
         {
-            return "#Grants: "+context.uniqueGrants[d.name];   
+            return "#Grants: "+context.uniqueGrants[d.name];
         }
         if(d.i==2)
         {
@@ -574,7 +575,7 @@ function formatData() {
         "nodes": [],
         "links": []
     };
-    
+
     context.filteredData.records.data.map(function(d, i) {
         var pre = "";
         context.config.meta.other.categories.forEach(function(d1, i1) {
