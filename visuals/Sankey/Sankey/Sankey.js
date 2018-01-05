@@ -21,6 +21,10 @@ Array.prototype.diff = function(a) {
 
 visualizationFunctions.Sankey = function(element, data, opts) {
   var context = this
+  function setDisciplineColors(colors){
+      context.disciplineColors = colors;
+  }
+  d3.json("data/disciplineColors.json", setDisciplineColors);
   this.config = this.CreateBaseConfig();
   this.SVGBase = this.config.easySVG(element[0])
   .attr('background', 'white')
@@ -419,13 +423,9 @@ visualizationFunctions.Sankey = function(element, data, opts) {
     console.log()
   }
 
-  function setDisciplineColors(colors){
-      context.disciplineColors = colors;
-  }
 
   function createNodes() {
 
-    d3.json("data/disciplineColors.json", setDisciplineColors);
     context.SVG.nodes = context.SVG.group.append("g").selectAll(".node")
     .data(graph.nodes)
     .enter().append("g")
