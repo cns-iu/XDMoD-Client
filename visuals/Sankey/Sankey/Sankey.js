@@ -449,7 +449,9 @@ visualizationFunctions.Sankey = function(element, data, opts) {
 
 
     }
-
+    d3.json("data/disciplineColors.json", function(data) {
+      context.disciplineColors = data;
+    });
     context.SVG.nodes.append("rect")
     .attr("class", "wvf-node")
     .attr("height", function(d) {
@@ -457,23 +459,16 @@ visualizationFunctions.Sankey = function(element, data, opts) {
     })
     .attr("width", sankey.nodeWidth())
     .attr("fill", function(d){
-      color = null;
-      d3.json("data/disciplineColors.json", function(data) {
-        console.log(d.name);
-        if (d.i == 0)
-          color = data[sankey01.resource_map[d.name]];
-
-        if(d.i == 1){
-            if(d.name.indexOf("NSF")>=0)
-              color = data["NSF"];
-            else color = data["NIH"];
-          }
-
-        if (d.i == 2)
-          color = data[d.name];
-
-      });
-      return color;
+      console.log(d.name);
+      if (d.i == 0)
+      return context.disciplineColors[sankey01.resource_map[d.name]];
+      if(d.i == 1){
+        if(d.name.indexOf("NSF")>=0)
+        return context.disciplineColors["NSF"];
+        else return context.disciplineColors["NIH"];
+      }
+      if (d.i == 2)
+      return context.disciplineColors[d.name];
     })
 
     context.SVG.nodes.append("text")
