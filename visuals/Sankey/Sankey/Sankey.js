@@ -457,14 +457,23 @@ visualizationFunctions.Sankey = function(element, data, opts) {
     })
     .attr("width", sankey.nodeWidth())
     .attr("fill", function(d){
+      color = null;
       d3.json("data/disciplineColors.json", function(data) {
         console.log(d.name);
         if (d.i == 0)
-          return data[sankey01.resource_map[d.name]];
+          color = data[sankey01.resource_map[d.name]];
 
-        else if(d.i == 1 || d.i == 2)
-          return data[d.name];
+        if(d.i == 1){
+            if(d.name.indexOf("NSF")>=0)
+              color = data["NSF"];
+            else color = data["NIH"];  
+          }
+
+        if (d.i == 2)
+          color = data[d.name];
+
       });
+      return color;
     })
 
     context.SVG.nodes.append("text")
