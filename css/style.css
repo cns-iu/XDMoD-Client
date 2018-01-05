@@ -572,3 +572,7 @@ dl, dd, dt{
   z-index: 10;
   color:black;
 }
+
+.modal-title{
+  color: black;
+}
