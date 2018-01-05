@@ -33,11 +33,6 @@ visualizationFunctions.Sankey = function(element, data, opts) {
       context.config.meta.labels.prettyMap = {};
     }
 
-
-    d3.json("data/disciplineColors.json", function(data) {
-      context.disciplineColors = data;
-    });
-
     context.SVG.background = context.SVG.append("rect")
     .attr("width", "100%")
     .attr("height", "100%")

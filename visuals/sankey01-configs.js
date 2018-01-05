@@ -27,7 +27,7 @@ configs.sankey01 = {
             "identifier": {
               "attr": "GrantID"
             },
-            "prettyMap": { 
+            "prettyMap": {
               'ResourceID':'IT Resources',
               'ResourceUnits':'Resource Units Used',
               'GrantSource':'Funding Type',
@@ -87,12 +87,16 @@ configs.sankey01 = {
          .key(function(d) { return d.GrantSource; })
          .key(function(d) { return d.GrantID; })
          .entries(ntwrk.filteredData.records.data);
-         ntwrk.totalGrants = 0;  
+         ntwrk.totalGrants = 0;
          ntwrk.uniqueGrants = {};
          ntwrk.nestedFunding.forEach(function(d,i){
           ntwrk.uniqueGrants[d.key] = d.values.length;
           ntwrk.totalGrants+= ntwrk.uniqueGrants[d.key];
 
         })
+
+        d3.json("data/disciplineColors.json", function(colors) {
+          context.disciplineColors = colors;
+        });
 
        }
