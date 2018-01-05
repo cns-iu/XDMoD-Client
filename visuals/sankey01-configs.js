@@ -95,8 +95,5 @@ configs.sankey01 = {
 
         })
 
-        d3.json("data/disciplineColors.json", function(colors) {
-          ntwrk.disciplineColors = colors;
-        });
 
        }
