@@ -3,7 +3,7 @@ var scripts = [{
 }, {
   "svg.css": "css/svg.css"
 }, {
-  "opensans": "../gui/lib/googleFonts-openSans/css"
+  "opensans": "fonts/open-sans/open-sans.css"
 }, {
   "jQuery": "../gui/lib/jquery/jquery-1.12.4.min.js"
 }, {
