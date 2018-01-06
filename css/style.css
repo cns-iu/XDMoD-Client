@@ -3,8 +3,7 @@
 html,body {
   width: 100%;
   height: 100%;
-  font-family: 'Open Sans', sans-serif;
-
+  font-family: 'Open Sans', sans-serif !important;
   overflow-x:hidden;
   background: #FFF;
 
@@ -25,7 +24,8 @@ html,body {
 }
 
 .readmaptxt, .footinicatorss{
-  font-size:15px
+  font-size:15px;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 .titlediv {
@@ -41,7 +41,8 @@ html,body {
   position: relative;
   left: 30px;
   display: inline;
-  font-size:25px
+  font-size:25px;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 
@@ -102,6 +103,7 @@ line {
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   border-radius: 2px;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 /* Creates a small triangle extender for the tooltip */
@@ -115,6 +117,7 @@ line {
   content: "\25BC";
   position: absolute;
   text-align: center;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 /* Style northward tooltips differently */
@@ -175,24 +178,17 @@ line {
 h1 {
   text-align: center;
   text-decoration: 600;
-  font-family: open sans !important;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
-h3 {
+h2, h3, h4, h5, h6 {
   font-size: 20px;
-  font-family: open sans !important;
+  font-family: 'Open Sans', sans-serif !important;
   font-weight: 600;
   color: black !important;
   text-align: center !important;
 }
 
-h5 {
-  font-size: 20px;
-  font-family: open sans !important;
-  font-weight: 600;
-  color: black !important;
-  text-align: center !important;
-}
 
 dl, dd, dt{
   margin:0;
@@ -231,6 +227,7 @@ dl, dd, dt{
   max-height: 400px;
   font-size: 12px;
   width:100%;
+  font-family: 'Open Sans', sans-serif !important;
 }
 #selection-display {
   width:90%;
@@ -275,6 +272,7 @@ dl, dd, dt{
   color: #222 !important;
 
   margin: 0px;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 .legend-row {
@@ -304,7 +302,7 @@ dl, dd, dt{
 
 .legend-item-label {
   background: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   text-transform: capitalize;
   font-weight: 600;
   margin-right: 15px;
@@ -333,6 +331,7 @@ dl, dd, dt{
   bottom: -205px;
   left: 40%;
   transform: translate(-40%, 0);
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 .sankey .legend-container{
@@ -354,6 +353,7 @@ dl, dd, dt{
   margin-left: auto;
   bottom: -270px;
   left:45%;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 .legend-container button {
@@ -362,7 +362,7 @@ dl, dd, dt{
   padding: 10px 20px;
   font-size: 18px;
   font-weight: 600;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -420,14 +420,14 @@ dl, dd, dt{
 
 .zoom-level-text{
   text-transform: capitalize;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   font-weight: 600;
 }
 
 .axis-text{
   font-weight: 600;
   text-transform: capitalize;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   font-size: 16px;
 
 }
@@ -447,6 +447,7 @@ dl, dd, dt{
 #filterLabel {
   font-weight: 600;
   font-size: 16px;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 .irs.js-irs-0{
@@ -463,12 +464,14 @@ dl, dd, dt{
   background: #e1e4e9;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 .irs-grid-text {
   color: rgba(0, 0, 0, 0.87) !important;
   top: 21px !important;
   font-size: 14px !important;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 .irs-from {
@@ -480,23 +483,18 @@ dl, dd, dt{
   background: #9bcc57;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
-.irs-min {
+.irs-to, .irs-min, .irs-max {
   font-size: 14px !important;
-}
-
-.irs-to {
-  font-size: 14px !important;
-}
-
-.irs-max {
-  font-size: 14px !important;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 /*Axes*/
 .axis text {
   font: 10px sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 /*Component bar graph*/
