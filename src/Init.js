@@ -2,10 +2,9 @@ var scripts = [{
         "style.css": "css/style.css"
     }, {
         "svg.css": "css/svg.css"
-    }, {
-        "roboto": "css/fonts/roboto.css"
-    }, {
-        "opensans": "css/fonts/opensans.css"
+    }, 
+    {
+        "opensans": "fonts/open-sans/open-sans.css"
     },
     {
         "bootstrap": "css/bootstrap.min.css"
