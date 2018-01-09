@@ -149,7 +149,7 @@ events.forceNetwork01 = function(ntwrk){
         nodeColor.updateStopColors(configs.forceNetwork01.nodes.styleEncoding.color.range)
         nodeColor.updateText([d3.min(ntwrk.Scales.nodeColorScale.domain()), d3.mean(ntwrk.Scales.nodeColorScale.domain()), d3.max(ntwrk.Scales.nodeColorScale.domain())])
 
-        ntwrk.SVG.on("mousewheel", function() {
+        ntwrk.SVG.on("wheel", function() {
             setTimeout(function() {
                 // nodeSize.updateTextFromFunc(function(d) {
                 //     return ntwrk.Scales.nodeSizeScale.invert(d / 2) / ntwrk.zoom.scale();
